@@ -1,0 +1,15 @@
+.EditSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.EditSection__title {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.EditSection__items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
