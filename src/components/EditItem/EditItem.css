@@ -1,0 +1,10 @@
+.EditItem {
+    width: 100px;
+    height: 100px;
+    border: 1px solid blue;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: small;
+}
