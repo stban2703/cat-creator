@@ -22,8 +22,8 @@
 
 .EditItem__image {
     max-width: none;
+    width: 100%;
     position: absolute;
-    z-index: -1;
 }
 
 h1 {

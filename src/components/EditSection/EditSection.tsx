@@ -3,17 +3,16 @@ import { EditItem } from '../EditItem/EditItem';
 import './EditSection.css';
 
 interface EditSectionProps {
-    name: string;
-    itemList: {id: number, name: string, checked: boolean}[];
+    itemList: {id: number, value: string, checked: boolean}[];
 }
 
-export const EditSection: React.FC<EditSectionProps> = ({name, itemList}) => {
+export const EditSection: React.FC<EditSectionProps> = ({itemList}) => {
     return (
         <section className="EditSection">
-            <h3 className="EditSection__title">{name}</h3>
+            <h3 className="EditSection__title">Tipo</h3>
             <div className="EditSection__items">
-                {itemList.map( ({ id, name, checked}) => {
-                    return <EditItem key={id} name={name} checked={checked}/>
+                {itemList.map( ({ id, value, checked}) => {
+                    return <EditItem key={id} value={value} checked={checked}/>
                 })}
             </div>
         </section>

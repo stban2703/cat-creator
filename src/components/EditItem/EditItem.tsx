@@ -1,14 +1,14 @@
 import React from 'react';
-import { getImageSrcFromName } from '../../utils/getImageSrcFromName';
+import { getImageSrcFromValue } from '../../utils/getImageSrcFromValue';
 import './EditItem.css';
 
 interface EditItemProps {
-    name: string;
+    value: string;
     checked: boolean;
 }
 
-export const EditItem: React.FC<EditItemProps> = ({ name, checked }) => {
-    const imageSrc = getImageSrcFromName(name);
+export const EditItem: React.FC<EditItemProps> = ({ value, checked }) => {
+    const imageSrc = getImageSrcFromValue(value);
     return (
         <div className="EditItem">
             <img className="EditItem__image" src={imageSrc} alt="" />
