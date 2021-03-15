@@ -1,11 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 .EditSection {
     display: flex;
     flex-direction: column;
 }
 
 .EditSection__title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
     margin: 0 0 10px 0;
+    color: #808183;
 }
 
 .EditSection__items {
