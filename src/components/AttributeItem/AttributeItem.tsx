@@ -1,5 +1,6 @@
 import React from 'react';
 import { getAttributeSrcFromValue } from '../../utils/getAttributeSrcFromValue';
+import './AttributeItem.css'
 
 interface AttributeItemProps {
     value: string;

@@ -14,9 +14,9 @@ export const EditOptions: React.FC<EditOptionsProps> = ({ currentAttribute, onEd
     const title = getTitleFromAttribute(currentAttribute);
 
     return (
-        <article className="EditOptions">
+        <section className="EditOptions">
             <h2 className="EditOptions__title">{title}</h2>
             <EditSection itemList={typeList} onEditAttributeType={onEditAttributeType} />
-        </article>
+        </section>
     )
 }
