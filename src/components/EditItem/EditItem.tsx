@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getImageSrcFromValue } from '../../utils/getImageSrcFromValue';
+import { getTypeSrcFromValue } from '../../utils/getTypeSrcFromValue';
 import './EditItem.css';
 
 interface EditItemProps {
@@ -8,7 +8,7 @@ interface EditItemProps {
 }
 
 export const EditItem: React.FC<EditItemProps> = ({ value, onEditAttributeType }) => {
-    const imageSrc = getImageSrcFromValue(value);
+    const imageSrc = getTypeSrcFromValue(value);
     const [ checked, setChecked ] = useState(false)
 
     return (
