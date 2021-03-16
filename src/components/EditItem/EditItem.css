@@ -12,6 +12,10 @@
     align-items: center;
 }
 
+.EditItem:hover {
+    cursor: pointer;
+}
+
 .EditItem__check {
     display: inline;
 }

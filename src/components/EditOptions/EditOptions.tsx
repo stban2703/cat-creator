@@ -6,17 +6,17 @@ import "./EditOptions.css";
 
 interface EditOptionsProps {
     currentAttribute: string;
-    //onEditAttributeType: (attribute: string, type: string) => void;
+    onEditAttributeType: (newType: string) => void;
 }
 
-export const EditOptions: React.FC<EditOptionsProps> = ({ currentAttribute }) => {
+export const EditOptions: React.FC<EditOptionsProps> = ({ currentAttribute, onEditAttributeType }) => {
     const typeList = getTypeListByAttribute(currentAttribute);
     const title = getTitleFromAttribute(currentAttribute);
 
     return (
         <article className="EditOptions">
             <h2 className="EditOptions__title">{title}</h2>
-            <EditSection currentAttribute={currentAttribute} itemList={typeList}/>
+            <EditSection currentAttribute={currentAttribute} itemList={typeList} onEditAttributeType={onEditAttributeType} />
         </article>
     )
 }

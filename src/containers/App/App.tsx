@@ -4,31 +4,29 @@ import { EditOptions } from '../../components/EditOptions/EditOptions';
 const initialProps = [
     {
         attribute: "fur",
-        type: 0,
+        type: "blank",
         color: "#000000"
     },
     {
         attribute: "eyes",
-        type: 0,
+        type: "blank",
         color: "#000000"
     },
     {
         attribute: "necklace",
-        type: 0,
+        type: "blank",
         color: "#000000"
     },
     {
         attribute: "hat",
-        type: 0,
+        type: "blank",
         color: "#000000"
     },
     {
         attribute: "scene",
-        type: 0,
+        type: "blank",
         filter: "none"
     },
-    /*furType: "noPattern",
-    currentAttribute: "fur"*/
 ]
 
 export const App = () => {
@@ -37,26 +35,23 @@ export const App = () => {
 
     /*const handleCurrentAttribute = (newCurrentAttribute: string) => {
         setCurrentAttribute(newCurrentAttribute);
-    }
+    }*/
 
-    const handleAttributeType = (selectedAttribute: string, newType: string) => {
+    const handleAttributeType = (newType: string) => {
         const copy = catProps.slice();
         const index = copy.findIndex((elem) => {
-            return elem.attribute === selectedAttribute;
+            return elem.attribute === currentAttribute;
         });
 
         copy[index].type = newType;
         setCatProps(copy);
         console.log(catProps[index].type);
-    }*/
+    }
 
-    /*const handleEditAttributeColor = (selectedAttribute: string, newType: string) => {
-
-    }*/
 
     return (
         <main>
-            <EditOptions currentAttribute={currentAttribute}/>
+            <EditOptions currentAttribute={currentAttribute} onEditAttributeType={handleAttributeType} />
         </main>
     );
 }
