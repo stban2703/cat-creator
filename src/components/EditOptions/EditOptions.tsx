@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { getTitleFromAttribute } from '../../utils/getTitleFromAttribute';
 import { getTypeListByAttribute } from '../../utils/getTypeListByAttribute';
 import { EditSection } from '../EditSection/EditSection';
@@ -16,7 +16,7 @@ export const EditOptions: React.FC<EditOptionsProps> = ({ currentAttribute, onEd
     return (
         <article className="EditOptions">
             <h2 className="EditOptions__title">{title}</h2>
-            <EditSection currentAttribute={currentAttribute} itemList={typeList} onEditAttributeType={onEditAttributeType} />
+            <EditSection itemList={typeList} onEditAttributeType={onEditAttributeType} />
         </article>
     )
 }

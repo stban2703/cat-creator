@@ -9,7 +9,7 @@ const initialProps = [
     },
     {
         attribute: "eyes",
-        type: "blank",
+        type: "expanded",
         color: "#000000"
     },
     {
@@ -33,9 +33,9 @@ export const App = () => {
     const [catProps, setCatProps] = useState(initialProps)
     const [currentAttribute, setCurrentAttribute] = useState("fur");
 
-    /*const handleCurrentAttribute = (newCurrentAttribute: string) => {
+    const handleCurrentAttribute = (newCurrentAttribute: string) => {
         setCurrentAttribute(newCurrentAttribute);
-    }*/
+    }
 
     const handleAttributeType = (newType: string) => {
         const copy = catProps.slice();

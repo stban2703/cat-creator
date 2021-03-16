@@ -2,40 +2,52 @@ const furTypes = [
     {
         id: 0,
         value: "blank",
-        checked: true
+        //checked: true
     },
     {
         id: 1,
         value: "lines",
-        checked: false
+        //checked: false
     },
     {
         id: 2,
         value: "colorAndwhite",
-        checked: false
+        //checked: false
     },
     {
         id: 3,
         value: "siamese",
-        checked: false
+        //checked: false
     },
     {
         id: 4,
         value: "tricolor",
-        checked: false
+        //checked: false
     }
 ]
 
 const eyeTypes = [
     {
         id: 0,
-        value: "blank",
+        value: "expanded",
         checked: true
+    },
+    {
+        id: 1,
+        value: "normal",
+        checked: true
+    },
+    {
+
+        id: 2,
+        value: "contracted",
+        checked: true
+
     }
 ]
 
 export const getTypeListByAttribute = (attribute: string) => {
-    switch(attribute) {
+    switch (attribute) {
         case "fur":
             return furTypes;
         case "eyes":
