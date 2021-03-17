@@ -85,7 +85,7 @@ export const App = () => {
 
         copy[index].type = newType;
         setCatProps(copy);
-        console.log(catProps[index].type);
+        console.log(catProps[index].type + " para " + catProps[index].attribute);
     }
 
     return (

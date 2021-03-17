@@ -12,7 +12,7 @@ export const getTitleFromAttribute = (attribute: string) => {
         case "hat":
             return "Sombrero";
 
-        case "Scene":
+        case "scene":
             return "Escenario";
     }
 }
