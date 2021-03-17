@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { AttributeSelection } from '../../components/AttributeSelection/AttributeSelection';
-import { EditOptions } from '../../components/EditOptions/EditOptions';
 import { EditPanel } from '../../components/EditPanel/EditPanel';
 
 const initialProps = [
@@ -65,6 +63,17 @@ export const App = () => {
     const [currentAttribute, setCurrentAttribute] = useState("fur");
 
     const handleCurrentAttribute = (newCurrentAttribute: string) => {
+        const copy = attributeList.slice();
+        /*const index = copy.findIndex((elem) => {
+          return elem.attribute === newCurrentAttribute;
+        });
+        copy[index].checked = true;*/
+        copy.forEach(e => {
+            if(e.attribute === newCurrentAttribute) {
+                e.checked = true;
+            } else e.checked = false;
+        })
+        setAttributeList(copy);
         setCurrentAttribute(newCurrentAttribute);
     }
 

@@ -2,27 +2,27 @@ const furTypes = [
     {
         id: 0,
         value: "blank",
-        //checked: true
+        checked: true
     },
     {
         id: 1,
         value: "lines",
-        //checked: false
+        checked: false
     },
     {
         id: 2,
         value: "colorAndwhite",
-        //checked: false
+        checked: false
     },
     {
         id: 3,
         value: "siamese",
-        //checked: false
+        checked: false
     },
     {
         id: 4,
         value: "tricolor",
-        //checked: false
+        checked: false
     }
 ]
 
@@ -35,13 +35,13 @@ const eyeTypes = [
     {
         id: 1,
         value: "normal",
-        checked: true
+        checked: false
     },
     {
 
         id: 2,
         value: "contracted",
-        checked: true
+        checked: false
 
     }
 ]
