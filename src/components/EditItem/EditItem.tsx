@@ -4,12 +4,12 @@ import './EditItem.css';
 
 interface EditItemProps {
     value: string;
+    checked: boolean;
     onEditAttributeType: () => void;
 }
 
-export const EditItem: React.FC<EditItemProps> = ({ value, onEditAttributeType }) => {
+export const EditItem: React.FC<EditItemProps> = ({ value, checked, onEditAttributeType }) => {
     const imageSrc = getTypeSrcFromValue(value);
-    const [ checked, setChecked ] = useState(false)
 
     return (
         <div className="EditItem" onClick={onEditAttributeType}>
