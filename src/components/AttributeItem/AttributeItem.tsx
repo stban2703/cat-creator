@@ -4,13 +4,14 @@ import './AttributeItem.css'
 
 interface AttributeItemProps {
     value: string;
+    checked: boolean;
 }
 
-export const AttributeItem:React.FC<AttributeItemProps> = ({ value }) => {
+export const AttributeItem:React.FC<AttributeItemProps> = ({ value, checked }) => {
     const imageSrc = getAttributeSrcFromValue(value);
     return(
-        <div className="AttributeItem">
-            <img className="EditItem__image" src={imageSrc} alt="" />
+        <div className={`AttributeItem${checked ? " AttributeItem--selected" : ""}`}>
+            <img className={`AttributeItem__image`} src={imageSrc} alt="" />
         </div>
     )
 }
