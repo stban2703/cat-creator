@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { getTypeSrcFromValue } from '../../utils/getTypeSrcFromValue';
 import './EditItem.css';
 

@@ -33,18 +33,86 @@ const initialAttributes = [
     {
         id: 0,
         attribute: "fur",
-        checked: true
+        checked: true,
+        itemList: [
+            {
+                id: 0,
+                value: "blank",
+                checked: true
+            },
+            {
+                id: 1,
+                value: "lines",
+                checked: false
+            },
+            {
+                id: 2,
+                value: "colorAndwhite",
+                checked: false
+            },
+            {
+                id: 3,
+                value: "siamese",
+                checked: false
+            },
+            {
+                id: 4,
+                value: "tricolor",
+                checked: false
+            }
+        ]
     },
     {
         id: 1,
         attribute: "eyes",
-        checked: false
+        checked: false,
+        itemList: [
+            {
+                id: 0,
+                value: "expanded",
+                checked: true
+            },
+            {
+                id: 1,
+                value: "normal",
+                checked: false
+            },
+            {
+
+                id: 2,
+                value: "contracted",
+                checked: false
+            }
+        ]
     },
     {
         id: 2,
         attribute: "necklace",
-        checked: false
-    },
+        checked: false,
+        itemList: [
+            {
+                id: 0,
+                value: "blank",
+                checked: true
+            },
+            {
+                id: 1,
+                value: "round",
+                checked: false
+            },
+            {
+                id: 2,
+                value: "heart",
+                checked: false
+            },
+            {
+
+                id: 3,
+                value: "ribbon",
+                checked: false
+            }
+        ]
+    }/*,
     {
         id: 3,
         attribute: "hat",
@@ -54,7 +122,7 @@ const initialAttributes = [
         id: 4,
         attribute: "scene",
         checked: false
-    }
+    }*/
 ]
 
 export const App = () => {
@@ -64,12 +132,8 @@ export const App = () => {
 
     const handleCurrentAttribute = (newCurrentAttribute: string) => {
         const copy = attributeList.slice();
-        /*const index = copy.findIndex((elem) => {
-          return elem.attribute === newCurrentAttribute;
-        });
-        copy[index].checked = true;*/
         copy.forEach(e => {
-            if(e.attribute === newCurrentAttribute) {
+            if (e.attribute === newCurrentAttribute) {
                 e.checked = true;
             } else e.checked = false;
         })
@@ -78,19 +142,34 @@ export const App = () => {
     }
 
     const handleAttributeType = (newType: string) => {
-        const copy = catProps.slice();
-        const index = copy.findIndex((elem) => {
+        const catPropsCopy = catProps.slice();
+        const catIndex = catPropsCopy.findIndex((elem) => {
             return elem.attribute === currentAttribute;
         });
+        catPropsCopy[catIndex].type = newType;
 
-        copy[index].type = newType;
-        setCatProps(copy);
-        console.log(catProps[index].type + " para " + catProps[index].attribute);
+        const attributeListCopy = attributeList.slice();
+        const attributeIndex = attributeListCopy.findIndex((elem) => {
+            return elem.attribute === currentAttribute;
+        })
+
+        attributeListCopy[attributeIndex].itemList.forEach(elem => {
+            if (elem.value === catPropsCopy[catIndex].type) {
+                elem.checked = true;
+            } else {
+                elem.checked = false;
+            }
+        })
+
+        setCatProps(catPropsCopy);
+        setAttributeList(attributeListCopy);
+
+        //console.log(catProps[catIndex].type + " para " + catProps[catIndex].attribute);
     }
 
     return (
         <main>
-            <EditPanel attributeList={attributeList} currentAttribute={currentAttribute} onChangeCurrentAttribute={handleCurrentAttribute} onEditAttributeType={handleAttributeType}/>
+            <EditPanel attributeList={attributeList} currentAttribute={currentAttribute} onChangeCurrentAttribute={handleCurrentAttribute} onEditAttributeType={handleAttributeType} />
         </main>
     );
 }
