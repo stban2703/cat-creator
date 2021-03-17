@@ -112,12 +112,29 @@ const initialAttributes = [
                 checked: false
             }
         ]
-    }/*,
+    },
     {
         id: 3,
         attribute: "hat",
-        checked: false
-    },
+        checked: false,
+        itemList: [
+            {
+                id: 0,
+                value: "blank",
+                checked: true
+            },
+            {
+                id: 1,
+                value: "tophat",
+                checked: false
+            },
+            {
+                id: 2,
+                value: "party",
+                checked: false
+            }
+        ]
+    }/*,
     {
         id: 4,
         attribute: "scene",
