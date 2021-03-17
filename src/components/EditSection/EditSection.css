@@ -3,13 +3,11 @@
 .EditSection {
     display: flex;
     flex-direction: column;
-    width: 100%;
 }
 
 .EditSection__title {
     font-size: 1.2rem;
     font-family: 'Poppins', sans-serif;
-    margin: 0 0 10px 0;
     color: #808183;
 }
 

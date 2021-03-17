@@ -1,7 +1,7 @@
-import { truncate } from 'node:fs';
 import React, { useState } from 'react';
 import { AttributeSelection } from '../../components/AttributeSelection/AttributeSelection';
 import { EditOptions } from '../../components/EditOptions/EditOptions';
+import { EditPanel } from '../../components/EditPanel/EditPanel';
 
 const initialProps = [
     {
@@ -81,8 +81,7 @@ export const App = () => {
 
     return (
         <main>
-            <AttributeSelection attributeList={attributeList} />
-            <EditOptions currentAttribute={currentAttribute} onEditAttributeType={handleAttributeType} />
+            <EditPanel attributeList={attributeList} currentAttribute={currentAttribute} onChangeCurrentAttribute={handleCurrentAttribute} onEditAttributeType={handleAttributeType}/>
         </main>
     );
 }
