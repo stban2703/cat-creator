@@ -9,9 +9,10 @@ interface EditOptionsProps {
     itemList: { id: number, value: string, checked: boolean }[];
     colorList: { id: number, value: string, checked: boolean }[];
     onEditAttributeType: (newType: string) => void;
+    onEditAttributeColor: (newColor:string) => void;
 }
 
-export const EditOptions: React.FC<EditOptionsProps> = ({ currentAttribute, itemList, colorList, onEditAttributeType }) => {
+export const EditOptions: React.FC<EditOptionsProps> = ({ currentAttribute, itemList, colorList, onEditAttributeType, onEditAttributeColor }) => {
     //const typeListt = getTypeListByAttribute(currentAttribute);
     const title = getTitleFromAttribute(currentAttribute);
 
@@ -19,7 +20,7 @@ export const EditOptions: React.FC<EditOptionsProps> = ({ currentAttribute, item
         <section className="EditOptions">
             <h2 className="EditOptions__title">{title}</h2>
             <EditSection itemList={itemList} onEditAttributeType={onEditAttributeType} />
-            <ColorSection colorList={colorList}/>
+            <ColorSection colorList={colorList} onEditAttributeColor={onEditAttributeColor} />
         </section>
     )
 }

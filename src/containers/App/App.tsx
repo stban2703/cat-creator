@@ -22,11 +22,11 @@ const initialProps = [
         type: "blank",
         color: "#000000",
     },
-    {
+    /*{
         attribute: "scene",
         type: "blank",
         filter: "none",
-    },
+    },*/
 ]
 
 const initialAttributes = [
@@ -246,16 +246,38 @@ export const App = () => {
                 elem.checked = false;
             }
         })
+        setCatProps(catPropsCopy);
+        setAttributeList(attributeListCopy);
+    }
+
+    const handleAttributeColor = (newColor: string) => {
+        const catPropsCopy = catProps.slice();
+        const catIndex = catPropsCopy.findIndex((elem) => {
+            return elem.attribute === currentAttribute;
+        });
+
+        catPropsCopy[catIndex].color = newColor;
+
+        const attributeListCopy = attributeList.slice();
+        const attributeIndex = attributeListCopy.findIndex((elem) => {
+            return elem.attribute === currentAttribute;
+        })
+
+        attributeListCopy[attributeIndex].colorList.forEach(elem => {
+            if (elem.value === catPropsCopy[catIndex].color) {
+                elem.checked = true;
+            } else {
+                elem.checked = false;
+            }
+        })
 
         setCatProps(catPropsCopy);
         setAttributeList(attributeListCopy);
-
-        //console.log(catProps[catIndex].type + " para " + catProps[catIndex].attribute);
     }
 
     return (
         <main>
-            <EditPanel attributeList={attributeList} currentAttribute={currentAttribute} onChangeCurrentAttribute={handleCurrentAttribute} onEditAttributeType={handleAttributeType} />
+            <EditPanel attributeList={attributeList} currentAttribute={currentAttribute} onChangeCurrentAttribute={handleCurrentAttribute} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor}/>
         </main>
     );
 }

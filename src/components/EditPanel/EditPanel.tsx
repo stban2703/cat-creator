@@ -7,10 +7,11 @@ interface EditPanelProps {
     attributeList: { id: number, attribute: string, checked: boolean, itemList: { id: number, value: string, checked: boolean }[], colorList: { id: number, value: string, checked: boolean }[] }[];
     currentAttribute: string;
     onEditAttributeType: (newType: string) => void;
+    onEditAttributeColor: (newColor: string) => void;
     onChangeCurrentAttribute: (newCurrentAttribute: string) => void;
 }
 
-export const EditPanel: React.FC<EditPanelProps> = ({ attributeList, currentAttribute, onEditAttributeType, onChangeCurrentAttribute }) => {
+export const EditPanel: React.FC<EditPanelProps> = ({ attributeList, currentAttribute, onEditAttributeType, onEditAttributeColor, onChangeCurrentAttribute }) => {
 
     const getItemListFromAttribute = (newAttribute: string) => {
         const copy = attributeList.slice();
@@ -36,7 +37,7 @@ export const EditPanel: React.FC<EditPanelProps> = ({ attributeList, currentAttr
     return (
         <article className="EditPanel">
             <AttributeSelection attributeList={attributeList} onChangeCurrentAttribute={onChangeCurrentAttribute} />
-            <EditOptions currentAttribute={currentAttribute} onEditAttributeType={onEditAttributeType} itemList={itemList} colorList={colorList} />
+            <EditOptions currentAttribute={currentAttribute} onEditAttributeType={onEditAttributeType} onEditAttributeColor={onEditAttributeColor} itemList={itemList} colorList={colorList} />
         </article>
     )
 }
