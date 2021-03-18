@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { CatView } from '../../components/CatView/CatView';
 import { EditPanel } from '../../components/EditPanel/EditPanel';
+import './App.css';
 
 const initialProps = [
     {
@@ -276,7 +278,8 @@ export const App = () => {
     }
 
     return (
-        <main>
+        <main className="App">
+            <CatView test={""}/>
             <EditPanel attributeList={attributeList} currentAttribute={currentAttribute} onChangeCurrentAttribute={handleCurrentAttribute} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor}/>
         </main>
     );
