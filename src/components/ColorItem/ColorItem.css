@@ -1,0 +1,23 @@
+.ColorItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #808183;
+    margin: 2px;
+    border-radius: 10px;
+    width: 63px;
+    height: 63px;
+}
+
+.ColorItem:hover {
+    cursor: pointer;
+}
+
+.ColorItem__check {
+    display: inline;
+    z-index: 1;
+}
+
+.ColorItem__check--remove {
+    display: none;
+}

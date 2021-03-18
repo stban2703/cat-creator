@@ -60,6 +60,24 @@ const initialAttributes = [
                 value: "tricolor",
                 checked: false
             }
+        ],
+
+        colorList: [
+            {
+                id: 0,
+                value: "#ffffff",
+                checked: true
+            },
+            {
+                id: 1,
+                value: "#000000",
+                checked: false
+            },
+            {
+                id: 2,
+                value: "#DC1515",
+                checked: false
+            }
         ]
     },
     {
@@ -81,6 +99,23 @@ const initialAttributes = [
 
                 id: 2,
                 value: "contracted",
+                checked: false
+            }
+        ],
+        colorList: [
+            {
+                id: 0,
+                value: "#ffffff",
+                checked: true
+            },
+            {
+                id: 1,
+                value: "#000000",
+                checked: false
+            },
+            {
+                id: 2,
+                value: "#DC1515",
                 checked: false
             }
         ]
@@ -111,6 +146,23 @@ const initialAttributes = [
                 value: "ribbon",
                 checked: false
             }
+        ],
+        colorList: [
+            {
+                id: 0,
+                value: "#ffffff",
+                checked: true
+            },
+            {
+                id: 1,
+                value: "#000000",
+                checked: false
+            },
+            {
+                id: 2,
+                value: "#DC1515",
+                checked: false
+            }
         ]
     },
     {
@@ -131,6 +183,23 @@ const initialAttributes = [
             {
                 id: 2,
                 value: "party",
+                checked: false
+            }
+        ],
+        colorList: [
+            {
+                id: 0,
+                value: "#ffffff",
+                checked: true
+            },
+            {
+                id: 1,
+                value: "#000000",
+                checked: false
+            },
+            {
+                id: 2,
+                value: "#DC1515",
                 checked: false
             }
         ]

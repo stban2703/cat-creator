@@ -1,4 +1,5 @@
 import React from 'react';
+import './ColorItem.css';
 
 interface ColorItemProps {
     value: string;
@@ -8,7 +9,7 @@ interface ColorItemProps {
 export const ColorItem: React.FC<ColorItemProps> = ({ value, checked }) => {
     return (
         <div className="ColorItem" style={ {backgroundColor: value} }>
-            <img src="images/items/checked.svg" alt=""/>
+            <img className={`ColorItem__check${checked ? '' : ' ColorItem__check--remove'}`} src="images/items/checked.svg" alt=""/>
         </div>
     )
 }
