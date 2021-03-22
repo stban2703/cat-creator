@@ -9,7 +9,7 @@ export const Intro: React.FC<IntroProps> = () => {
     return(
         <article>
             <h1>Cat creator</h1>
-            <Link to={`/creator`}>Crear gato</Link>
+            <Link to={`/create`} id="Gato">Crear gato</Link>
         </article>
     )
 }

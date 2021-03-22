@@ -281,10 +281,8 @@ export const App = () => {
     return (
         <main className="App">
             <BrowserRouter>
-
-                <Route path="/" exact render={() => <Intro />} />
-
-                <Route path="/creator" render={() =>
+                <Route path="/" render={() =>  <Intro></Intro>} exact />
+                <Route path="/create" render={() =>
                     <Creator catProps={catProps} attributeList={attributeList} currentAttribute={currentAttribute} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor} onChangeCurrentAttribute={handleCurrentAttribute} />}
                 />
 
