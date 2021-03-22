@@ -1,8 +1,9 @@
 import React from 'react';
+import { CatPropType } from '../../utils/CatPropType';
 import './CatView.css';
 
 interface CatViewProps {
-    catProps: {attribute: string, type: string, color: string} [];
+    catProps: CatPropType[];
 }
 
 export const CatView: React.FC<CatViewProps> = ({ catProps }) => {

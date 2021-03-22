@@ -1,13 +1,15 @@
 import React from 'react';
+import { ColorType } from '../../utils/ColorType';
 import { getTitleFromAttribute } from '../../utils/getTitleFromAttribute';
+import { ItemType } from '../../utils/ItemType';
 import { ColorSection } from '../ColorSection/ColorSection';
 import { EditSection } from '../EditSection/EditSection';
 import "./EditOptions.css";
 
 interface EditOptionsProps {
     currentAttribute: string;
-    itemList: { id: number, value: string, checked: boolean }[];
-    colorList: { id: number, value: string, checked: boolean }[];
+    itemList: ItemType[];
+    colorList: ColorType[];
     onEditAttributeType: (newType: string) => void;
     onEditAttributeColor: (newColor:string) => void;
 }

@@ -1,9 +1,10 @@
 import React from 'react';
+import { ColorType } from '../../utils/ColorType';
 import { ColorItem } from '../ColorItem/ColorItem';
 import './ColorSection.css';
 
 interface ColorSectionProps {
-    colorList: { id: number, value: string, checked: boolean }[];
+    colorList: ColorType[];
     onEditAttributeColor: (newColor: string) => void;
 }
 

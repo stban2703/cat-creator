@@ -1,9 +1,10 @@
 import React from 'react';
+import { AttributeType } from '../../utils/AttributeType';
 import { AttributeItem } from '../AttributeItem/AttributeItem';
 import './AttributeSelection.css';
 
 interface AttributeSelectionProps {
-    attributeList: { id: number, attribute: string, checked: boolean }[];
+    attributeList: AttributeType[];
     onChangeCurrentAttribute: (newCurrentAttribute: string) => void;
 }
 

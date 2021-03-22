@@ -1,10 +1,11 @@
 import React from 'react';
+import { AttributeType } from '../../utils/AttributeType';
 import { AttributeSelection } from '../AttributeSelection/AttributeSelection';
 import { EditOptions } from '../EditOptions/EditOptions';
 import './EditPanel.css';
 
 interface EditPanelProps {
-    attributeList: { id: number, attribute: string, checked: boolean, itemList: { id: number, value: string, checked: boolean }[], colorList: { id: number, value: string, checked: boolean }[] }[];
+    attributeList: AttributeType[];
     currentAttribute: string;
     onEditAttributeType: (newType: string) => void;
     onEditAttributeColor: (newColor: string) => void;
