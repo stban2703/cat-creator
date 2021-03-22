@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Route } from 'react-router';
 import { HashRouter } from 'react-router-dom';
 import { Creator } from '../Creator/Creator';
-import { Intro } from '../Intro/Intro';
+//import { Intro } from '../Intro/Intro';
 
 const initialProps = [
     {
@@ -50,7 +50,7 @@ const initialAttributes = [
             },
             {
                 id: 2,
-                value: "colorAndwhite",
+                value: "colorAndWhite",
                 checked: false
             },
             {
@@ -281,8 +281,8 @@ export const App = () => {
     return (
         <main className="App">
             <HashRouter basename={process.env.PUBLIC_URL}>
-                <Route path="/" render={() => <Intro></Intro>} exact />
-                <Route path="/create" render={() =>
+                {/*<Route path="/" render={() => <Intro></Intro>} exact />*/}
+                <Route path="/" render={() =>
                     <Creator catProps={catProps} attributeList={attributeList} currentAttribute={currentAttribute} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor} onChangeCurrentAttribute={handleCurrentAttribute} />}
                 />
 
