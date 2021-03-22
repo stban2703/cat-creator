@@ -1,28 +1,29 @@
 import React, { useState } from 'react';
-import { CatView } from '../../components/CatView/CatView';
-import { EditPanel } from '../../components/EditPanel/EditPanel';
-import './App.css';
+import { Route } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
+import { Creator } from '../Creator/Creator';
+import { Intro } from '../Intro/Intro';
 
 const initialProps = [
     {
         attribute: "fur",
         type: "blank",
-        color: "#000000",
+        color: "#ffffff",
     },
     {
         attribute: "eyes",
         type: "expanded",
-        color: "#000000",
+        color: "#ffffff",
     },
     {
         attribute: "necklace",
         type: "blank",
-        color: "#000000",
+        color: "#ffffff",
     },
     {
         attribute: "hat",
         type: "blank",
-        color: "#000000",
+        color: "#ffffff",
     },
     /*{
         attribute: "scene",
@@ -279,8 +280,15 @@ export const App = () => {
 
     return (
         <main className="App">
-            <CatView test={""}/>
-            <EditPanel attributeList={attributeList} currentAttribute={currentAttribute} onChangeCurrentAttribute={handleCurrentAttribute} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor}/>
+            <BrowserRouter>
+
+                <Route path="/" exact render={() => <Intro />} />
+
+                <Route path="/creator" render={() =>
+                    <Creator catProps={catProps} attributeList={attributeList} currentAttribute={currentAttribute} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor} onChangeCurrentAttribute={handleCurrentAttribute} />}
+                />
+
+            </BrowserRouter>
         </main>
     );
 }
