@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router';
+//import { useParams } from 'react-router';
 import { CatView } from '../../components/CatView/CatView';
 import { EditPanel } from '../../components/EditPanel/EditPanel';
 import { AttributeType } from '../../utils/AttributeType';
@@ -17,7 +17,7 @@ interface CreatorProps {
 
 export const Creator: React.FC<CreatorProps> = ({ catProps, attributeList, currentAttribute, onEditAttributeType, onEditAttributeColor, onChangeCurrentAttribute }) => {
 
-    const { id } = useParams<{ id: string }>();
+    //const { id } = useParams<{ id: string }>();
 
     return (
         <article className="Creator">
