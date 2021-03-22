@@ -1,4 +1,4 @@
-const baseTypeUrl = 'images/items/'
+const baseTypeUrl = 'cat-creator/images/items/'
 
 export const getTypeSrcFromValue = (value: string) => {
     if(value === "blank") {
