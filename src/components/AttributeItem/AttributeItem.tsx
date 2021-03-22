@@ -10,6 +10,7 @@ interface AttributeItemProps {
 
 export const AttributeItem:React.FC<AttributeItemProps> = ({ value, checked, onChangeCurrentAttribute }) => {
     const imageSrc = getAttributeSrcFromValue(value);
+
     return(
         <div className={`AttributeItem${checked ? " AttributeItem--selected" : ""}`} onClick={onChangeCurrentAttribute}>
             <img className={`AttributeItem__image`} src={imageSrc} alt="" />
