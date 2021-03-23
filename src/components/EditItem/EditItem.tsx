@@ -1,17 +1,17 @@
 import React from 'react';
-import { getCheckedImageSrc } from '../../utils/getCheckedImageSrc';
-import { getTypeSrcFromValue } from '../../utils/getTypeSrcFromValue';
+import { getImageSrcFromUrl } from '../../utils/getImageSrcFromUrl';
 import './EditItem.css';
 
 interface EditItemProps {
     value: string;
     checked: boolean;
+    url: string;
     onEditAttributeType: () => void;
 }
 
-export const EditItem: React.FC<EditItemProps> = ({ value, checked, onEditAttributeType }) => {
-    const imageSrc = getTypeSrcFromValue(value);
-    const checkedSrc = getCheckedImageSrc();
+export const EditItem: React.FC<EditItemProps> = ({ value, url, checked, onEditAttributeType }) => {
+    const imageSrc = getImageSrcFromUrl(url);
+    const checkedSrc = getImageSrcFromUrl("items/checked");
 
     return (
         <div className="EditItem" onClick={onEditAttributeType}>

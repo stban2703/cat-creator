@@ -1,5 +1,5 @@
 import React from 'react';
-import { getCheckedImageSrc } from '../../utils/getCheckedImageSrc';
+import { getImageSrcFromUrl } from '../../utils/getImageSrcFromUrl';
 import './ColorItem.css';
 
 interface ColorItemProps {
@@ -9,7 +9,7 @@ interface ColorItemProps {
 }
 
 export const ColorItem: React.FC<ColorItemProps> = ({ value, checked, onEditAttributeColor }) => {
-    const checkedSrc = getCheckedImageSrc();
+    const checkedSrc = getImageSrcFromUrl("items/checked");
     return (
         <div className="ColorItem" style={ {backgroundColor: value} } onClick={onEditAttributeColor}>
             <img className={`ColorItem__check${checked ? '' : ' ColorItem__check--remove'}`} src={checkedSrc} alt=""/>

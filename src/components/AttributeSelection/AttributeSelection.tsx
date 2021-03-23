@@ -11,13 +11,13 @@ interface AttributeSelectionProps {
 export const AttributeSelection: React.FC<AttributeSelectionProps> = ({ attributeList, onChangeCurrentAttribute }) => {
     return (
         <section className="AttributeSelection">
-            {attributeList.map(({ id, attribute, checked }) => {
+            {attributeList.map(({ id, attribute, url, checked }) => {
 
                 const intermediateChangeAttribute = () => {
                     onChangeCurrentAttribute(attribute)
                 }
 
-                return <AttributeItem key={id} value={attribute} checked={checked} onChangeCurrentAttribute={intermediateChangeAttribute}/>
+                return <AttributeItem key={id} value={attribute} url={url} checked={checked} onChangeCurrentAttribute={intermediateChangeAttribute}/>
             })}
         </section>
     )
