@@ -3,6 +3,7 @@ import { Route } from 'react-router';
 import { HashRouter } from 'react-router-dom';
 import { Creator } from '../Creator/Creator';
 //import { Intro } from '../Intro/Intro';
+import './App.css';
 
 const initialProps = [
     {
@@ -206,12 +207,7 @@ const initialAttributes = [
                 checked: false
             }
         ]
-    }/*,
-    {
-        id: 4,
-        attribute: "scene",
-        checked: false
-    }*/
+    }
 ]
 
 export const App = () => {
