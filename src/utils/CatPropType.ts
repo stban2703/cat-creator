@@ -1,5 +1,5 @@
 export type CatPropType = {
-    attribute: string,
-    type: string,
-    color: string
+    id: number,
+    catName: string,
+    attributeList: { id: string, type: string, color: string }[];
 }

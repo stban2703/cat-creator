@@ -23,11 +23,11 @@ export const App = () => {
     }
 
     const handleAttributeType = (newType: string) => {
-        const catPropsCopy = catProps.slice();
-        const catIndex = catPropsCopy.findIndex((elem) => {
-            return elem.attribute === currentAttribute;
+        const catPropsCopy = {...catProps};
+        const catPropIndex = catPropsCopy.attributeList.findIndex((elem) => {
+            return elem.id === currentAttribute;
         });
-        catPropsCopy[catIndex].type = newType;
+        catPropsCopy.attributeList[catPropIndex].type = newType;
 
         const attributeListCopy = attributeList.slice();
         const attributeIndex = attributeListCopy.findIndex((elem) => {
@@ -35,7 +35,7 @@ export const App = () => {
         })
 
         attributeListCopy[attributeIndex].itemList.forEach(elem => {
-            if (elem.value === catPropsCopy[catIndex].type) {
+            if (elem.value === catPropsCopy.attributeList[catPropIndex].type) {
                 elem.checked = true;
             } else {
                 elem.checked = false;
@@ -46,12 +46,12 @@ export const App = () => {
     }
 
     const handleAttributeColor = (newColor: string) => {
-        const catPropsCopy = catProps.slice();
-        const catIndex = catPropsCopy.findIndex((elem) => {
-            return elem.attribute === currentAttribute;
+        const catPropsCopy = {...catProps};
+        const catIndex = catPropsCopy.attributeList.findIndex((elem) => {
+            return elem.id === currentAttribute;
         });
 
-        catPropsCopy[catIndex].color = newColor;
+        catPropsCopy.attributeList[catIndex].color = newColor;
 
         const attributeListCopy = attributeList.slice();
         const attributeIndex = attributeListCopy.findIndex((elem) => {
@@ -59,7 +59,7 @@ export const App = () => {
         })
 
         attributeListCopy[attributeIndex].colorList.forEach(elem => {
-            if (elem.value === catPropsCopy[catIndex].color) {
+            if (elem.value === catPropsCopy.attributeList[catIndex].color) {
                 elem.checked = true;
             } else {
                 elem.checked = false;
@@ -76,7 +76,6 @@ export const App = () => {
                 <Route path="/" render={() =>
                     <Creator catProps={catProps} attributeList={attributeList} currentAttribute={currentAttribute} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor} onChangeCurrentAttribute={handleCurrentAttribute} />}
                 />
-
             </HashRouter>
         </main>
     );

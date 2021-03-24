@@ -7,7 +7,7 @@ import { CatPropType } from '../../utils/CatPropType';
 import './Creator.css';
 
 interface CreatorProps {
-    catProps: CatPropType[];
+    catProps: CatPropType;
     attributeList: AttributeType[];
     currentAttribute: string;
     onEditAttributeType: (newType: string) => void;
