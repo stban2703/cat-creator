@@ -89,12 +89,17 @@ export const initialCatAttributes = [
             },
             {
                 id: 1,
-                value: "#000000",
+                value: "#05F0FF",
                 checked: false
             },
             {
                 id: 2,
                 value: "#DC1515",
+                checked: false
+            },
+            {
+                id: 3,
+                value: "#FF78CB",
                 checked: false
             }
         ]
