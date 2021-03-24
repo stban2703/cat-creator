@@ -84,7 +84,7 @@ export const initialCatAttributes = [
         colorList: [
             {
                 id: 0,
-                value: "#ffffff",
+                value: "#0BF86A",
                 checked: true
             },
             {

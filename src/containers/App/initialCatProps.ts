@@ -7,7 +7,7 @@ export const initialCatProps = [
     {
         attribute: "eyes",
         type: "expanded",
-        color: "#ffffff",
+        color: "#0BF86A",
     },
     {
         attribute: "necklace",

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Route } from 'react-router';
 import { HashRouter } from 'react-router-dom';
-import { SvgLoader, SvgProxy } from "react-svgmt";
 import { Creator } from '../Creator/Creator';
 import './App.css';
 import { initialCatAttributes } from './initialCatAttributes';
