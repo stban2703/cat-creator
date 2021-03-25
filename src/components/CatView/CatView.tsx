@@ -8,11 +8,19 @@ interface CatViewProps {
 }
 
 export const CatView: React.FC<CatViewProps> = ({ catProps }) => {
+    const catFur = catProps.attributeList[0];
+    const catEyes = catProps.attributeList[1];
     return (
         <article className="CatView">
             <SvgLoader path={`${process.env.PUBLIC_URL}/images/render/catsvg.svg`}>
-                { /*<SvgProxy selector="#eye-left-color" fill={catProps[1].color} />
-                <SvgProxy selector="#eye-right-color" fill={catProps[1].color} /> */}
+                <SvgProxy selector="#eye-left-color" fill={catEyes.color} />
+                <SvgProxy selector="#eye-right-color" fill={catEyes.color} />
+                <SvgProxy selector="#head" fill={catFur.color} />
+                <SvgProxy selector="#ear-left-outside" fill={catFur.color} />
+                <SvgProxy selector="#ear-right-outside" fill={catFur.color} />
+                <SvgProxy selector="#body-front" fill={catFur.color} />
+                <SvgProxy selector="#body-back" fill={catFur.color} />
+                <SvgProxy selector="#tail" fill={catFur.color} />
             </SvgLoader>
             {/*<h4>Atributo: {catProps[0].attribute} = Tipo: {catProps[0].type} y Color: {catProps[0].color}</h4>
             <h4>Atributo: {catProps[1].attribute} = Tipo: {catProps[1].type} y Color: {catProps[1].color}</h4>
