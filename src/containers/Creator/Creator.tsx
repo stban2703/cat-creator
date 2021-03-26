@@ -2,12 +2,12 @@ import React from 'react';
 //import { useParams } from 'react-router';
 import { CatView } from '../../components/CatView/CatView';
 import { EditPanel } from '../../components/EditPanel/EditPanel';
-import { CatPropType } from '../../utils/CatPropType';
+import { CatPropsType } from '../../utils/CatPropsType';
 import { SettingOptionType } from '../../utils/SettingOptionType';
 import './Creator.css';
 
 interface CreatorProps {
-    catProps: CatPropType;
+    catProps: CatPropsType;
     settingsOptions: SettingOptionType[];
     currentAttribute: string;
     onEditAttributeType: (newType: string) => void;

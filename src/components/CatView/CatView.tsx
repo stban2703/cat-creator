@@ -1,10 +1,10 @@
 import React from 'react';
-import { CatPropType } from '../../utils/CatPropType';
+import { CatPropsType } from '../../utils/CatPropsType';
 import { SvgLoader, SvgProxy } from "react-svgmt";
 import './CatView.css';
 
 interface CatViewProps {
-    catProps: CatPropType;
+    catProps: CatPropsType;
 }
 
 export const CatView: React.FC<CatViewProps> = ({ catProps }) => {
@@ -12,7 +12,7 @@ export const CatView: React.FC<CatViewProps> = ({ catProps }) => {
     const catEyes = catProps.settings[1];
     return (
         <article className="CatView">
-            <SvgLoader class="CatView__model" path={`${process.env.PUBLIC_URL}/images/render/catsvg.svg`}>
+            <SvgLoader className="CatView__model" path={`${process.env.PUBLIC_URL}/images/render/catsvg.svg`}>
                 <SvgProxy selector="#eye-left-color" fill={catEyes.fill} />
                 <SvgProxy selector="#eye-right-color" fill={catEyes.fill} />
                 <SvgProxy selector="#head" fill={catFur.fill} />

@@ -1,4 +1,4 @@
-export type SettingType = {
+export type CatSettingType = {
     id: string,
     type: string,
     fill: string,
