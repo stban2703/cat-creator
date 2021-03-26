@@ -1,7 +1,6 @@
-export const initialCatAttributes = [
+export const initialSettingsOptions = [
     {
-        id: 0,
-        attribute: "fur",
+        id: "fur",
         url: "attributes/fur",
         checked: true,
         itemList: [
@@ -36,23 +35,25 @@ export const initialCatAttributes = [
                 checked: false
             }
         ],
-
         colorList: [
             {
                 id: 0,
-                value: "#ffffff",
+                fill: "#FFFFFF",
+                shadow: "#EBEBEB",
+                stroke: "#AFAFAF",
                 checked: true
             },
             {
                 id: 1,
-                value: "#303030",
+                fill: "#303030",
+                shadow: "#000000",
+                stroke: "#AFAFAF",
                 checked: false
             }
         ]
     },
     {
-        id: 1,
-        attribute: "eyes",
+        id: "eyes",
         url: "attributes/eyes",
         checked: false,
         itemList: [
@@ -79,24 +80,29 @@ export const initialCatAttributes = [
         colorList: [
             {
                 id: 0,
-                value: "#0BF86A",
+                fill: "#0BF86A",
+                shadow: "none",
+                stroke: "none",
                 checked: true
             },
             {
                 id: 1,
-                value: "#05F0FF",
+                fill: "#05F0FF",
+                shadow: "none",
+                stroke: "none",
                 checked: false
             },
             {
                 id: 2,
-                value: "#FF78CB",
+                fill: "#FF78CB",
+                shadow: "none",
+                stroke: "none",
                 checked: false
             }
         ]
     },
     {
-        id: 2,
-        attribute: "necklace",
+        id: "necklace",
         url: "attributes/necklace",
         checked: false,
         itemList: [
@@ -119,7 +125,6 @@ export const initialCatAttributes = [
                 checked: false
             },
             {
-
                 id: 3,
                 value: "ribbon",
                 url: "items/ribbon",
@@ -129,24 +134,29 @@ export const initialCatAttributes = [
         colorList: [
             {
                 id: 0,
-                value: "#ffffff",
+                fill: "#ffffff",
+                shadow: "none",
+                stroke: "none",
                 checked: true
             },
             {
                 id: 1,
-                value: "#000000",
+                fill: "#000000",
+                shadow: "none",
+                stroke: "none",
                 checked: false
             },
             {
                 id: 2,
-                value: "#DC1515",
+                fill: "#DC1515",
+                shadow: "none",
+                stroke: "none",
                 checked: false
             }
         ]
     },
     {
-        id: 3,
-        attribute: "hat",
+        id: "hat",
         url: "attributes/hat",
         checked: false,
         itemList: [
@@ -172,17 +182,23 @@ export const initialCatAttributes = [
         colorList: [
             {
                 id: 0,
-                value: "#ffffff",
+                fill: "#ffffff",
+                shadow: "none",
+                stroke: "none",
                 checked: true
             },
             {
                 id: 1,
-                value: "#000000",
+                fill: "#000000",
+                shadow: "none",
+                stroke: "none",
                 checked: false
             },
             {
                 id: 2,
-                value: "#DC1515",
+                fill: "#DC1515",
+                shadow: "none",
+                stroke: "none",
                 checked: false
             }
         ]

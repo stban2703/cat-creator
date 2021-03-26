@@ -1,26 +1,35 @@
 export const initialCatProps = {
     id: 0,
     catName: "Gato nuevo",
-    attributeList: [
+    creationDate: Date.now(),
+    settings: [
         {
             id: "fur",
             type: "blank",
-            color: "#ffffff",
+            fill: "#ffffff",
+            shadow: "#EBEBEB",
+            stroke: "AFAFAF"
         },
         {
             id: "eyes",
             type: "expanded",
-            color: "#0BF86A",
+            fill: "#0BF86A",
+            shadow: "none",
+            stroke: "none"
         },
         {
             id: "necklace",
             type: "blank",
-            color: "#ffffff",
+            fill: "#ffffff",
+            shadow: "none",
+            stroke: "none"
         },
         {
             id: "hat",
             type: "blank",
-            color: "#ffffff",
+            fill: "#ffffff",
+            shadow: "none",
+            stroke: "none"
         },
     ]
 }

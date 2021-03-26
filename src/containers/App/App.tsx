@@ -3,18 +3,19 @@ import { Route } from 'react-router';
 import { HashRouter } from 'react-router-dom';
 import { Creator } from '../Creator/Creator';
 import './App.css';
-import { initialCatAttributes } from './initialCatAttributes';
+
 import { initialCatProps } from './initialCatProps';
+import { initialSettingsOptions } from './initialSettingsOptions';
 
 export const App = () => {
     const [catProps, setCatProps] = useState(initialCatProps);
-    const [attributeList, setAttributeList] = useState(initialCatAttributes);
+    const [settingsOptions, setAttributeList] = useState(initialSettingsOptions);
     const [currentAttribute, setCurrentAttribute] = useState("fur");
 
     const handleCurrentAttribute = (newCurrentAttribute: string) => {
-        const copy = attributeList.slice();
+        const copy = settingsOptions.slice();
         copy.forEach(e => {
-            if (e.attribute === newCurrentAttribute) {
+            if (e.id === newCurrentAttribute) {
                 e.checked = true;
             } else e.checked = false;
         })
@@ -23,43 +24,45 @@ export const App = () => {
     }
 
     const handleAttributeType = (newType: string) => {
-        const catPropsCopy = {...catProps};
-        const catPropIndex = catPropsCopy.attributeList.findIndex((elem) => {
+        const catPropsCopy = { ...catProps };
+        const catSettingsIndex = catPropsCopy.settings.findIndex((elem) => {
             return elem.id === currentAttribute;
         });
-        catPropsCopy.attributeList[catPropIndex].type = newType;
 
-        const attributeListCopy = attributeList.slice();
-        const attributeIndex = attributeListCopy.findIndex((elem) => {
-            return elem.attribute === currentAttribute;
+        catPropsCopy.settings[catSettingsIndex].type = newType;
+
+        const settingsOptionsCopy = settingsOptions.slice();
+        const settingsOptionsIndex = settingsOptionsCopy.findIndex(elem => {
+            return elem.id === currentAttribute;
         })
 
-        attributeListCopy[attributeIndex].itemList.forEach(elem => {
-            if (elem.value === catPropsCopy.attributeList[catPropIndex].type) {
+        settingsOptionsCopy[settingsOptionsIndex].itemList.forEach(elem => {
+            if (elem.value === catPropsCopy.settings[catSettingsIndex].type) {
                 elem.checked = true;
             } else {
                 elem.checked = false;
             }
         })
+
         setCatProps(catPropsCopy);
-        setAttributeList(attributeListCopy);
+        setAttributeList(settingsOptionsCopy);
     }
 
     const handleAttributeColor = (newColor: string) => {
-        const catPropsCopy = {...catProps};
-        const catIndex = catPropsCopy.attributeList.findIndex((elem) => {
+        const catPropsCopy = { ...catProps };
+        const catSettingsIndex = catPropsCopy.settings.findIndex((elem) => {
             return elem.id === currentAttribute;
         });
 
-        catPropsCopy.attributeList[catIndex].color = newColor;
+        catPropsCopy.settings[catSettingsIndex].fill = newColor;
 
-        const attributeListCopy = attributeList.slice();
-        const attributeIndex = attributeListCopy.findIndex((elem) => {
-            return elem.attribute === currentAttribute;
+        const settingsOptionsCopy = initialSettingsOptions.slice();
+        const settingsOptionsIndex = settingsOptionsCopy.findIndex((elem) => {
+            return elem.id === currentAttribute;
         })
 
-        attributeListCopy[attributeIndex].colorList.forEach(elem => {
-            if (elem.value === catPropsCopy.attributeList[catIndex].color) {
+        settingsOptionsCopy[settingsOptionsIndex].colorList.forEach(elem => {
+            if (elem.fill === catPropsCopy.settings[catSettingsIndex].fill) {
                 elem.checked = true;
             } else {
                 elem.checked = false;
@@ -67,14 +70,14 @@ export const App = () => {
         })
 
         setCatProps(catPropsCopy);
-        setAttributeList(attributeListCopy);
+        setAttributeList(settingsOptionsCopy);
     }
 
     return (
         <main className="App">
             <HashRouter basename={process.env.PUBLIC_URL}>
                 <Route path="/" render={() =>
-                    <Creator catProps={catProps} attributeList={attributeList} currentAttribute={currentAttribute} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor} onChangeCurrentAttribute={handleCurrentAttribute} />}
+                    <Creator catProps={catProps} settingsOptions={settingsOptions} currentAttribute={currentAttribute} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor} onChangeCurrentAttribute={handleCurrentAttribute} />}
                 />
             </HashRouter>
         </main>

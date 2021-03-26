@@ -1,43 +1,43 @@
 import React from 'react';
-import { AttributeType } from '../../utils/AttributeType';
-import { AttributeSelection } from '../AttributeSelection/AttributeSelection';
+import { SettingOptionType } from '../../utils/SettingOptionType';
+import { EditSelection } from '../EditSelection/EditSelection';
 import { EditOptions } from '../EditOptions/EditOptions';
 import './EditPanel.css';
 
 interface EditPanelProps {
-    attributeList: AttributeType[];
+    settingOptions: SettingOptionType[];
     currentAttribute: string;
     onEditAttributeType: (newType: string) => void;
     onEditAttributeColor: (newColor: string) => void;
     onChangeCurrentAttribute: (newCurrentAttribute: string) => void;
 }
 
-export const EditPanel: React.FC<EditPanelProps> = ({ attributeList, currentAttribute, onEditAttributeType, onEditAttributeColor, onChangeCurrentAttribute }) => {
+export const EditPanel: React.FC<EditPanelProps> = ({ settingOptions, currentAttribute, onEditAttributeType, onEditAttributeColor, onChangeCurrentAttribute }) => {
 
-    const getItemListFromAttribute = (newAttribute: string) => {
-        const copy = attributeList.slice();
+    const getItemListFromId = (newAttribute: string) => {
+        const copy = settingOptions.slice();
         const index = copy.findIndex((elem) => {
-            return elem.attribute === newAttribute;
+            return elem.id === newAttribute;
         })
-        const newItemList = attributeList[index].itemList;
+        const newItemList = settingOptions[index].itemList;
         return newItemList;
     };
 
-    const getColorListFromAttribute = (newAttribute: string) => {
-        const copy = attributeList.slice();
+    const getColorListFromId = (newAttribute: string) => {
+        const copy = settingOptions.slice();
         const index = copy.findIndex((elem) => {
-            return elem.attribute === newAttribute;
+            return elem.id === newAttribute;
         })
-        const newColorList = attributeList[index].colorList;
+        const newColorList = settingOptions[index].colorList;
         return newColorList;
     }
 
-    const itemList = getItemListFromAttribute(currentAttribute);
-    const colorList = getColorListFromAttribute(currentAttribute);
+    const itemList = getItemListFromId(currentAttribute);
+    const colorList = getColorListFromId(currentAttribute);
 
     return (
         <article className="EditPanel">
-            <AttributeSelection attributeList={attributeList} onChangeCurrentAttribute={onChangeCurrentAttribute} />
+            <EditSelection settingOptions={settingOptions} onChangeCurrentAttribute={onChangeCurrentAttribute} />
             <EditOptions currentAttribute={currentAttribute} onEditAttributeType={onEditAttributeType} onEditAttributeColor={onEditAttributeColor} itemList={itemList} colorList={colorList} />
         </article>
     )

@@ -1,5 +1,7 @@
 export type ColorType = {
     id: number,
-    value: string,
+    fill: string,
+    shadow: string,
+    stroke: string,
     checked: boolean
 }

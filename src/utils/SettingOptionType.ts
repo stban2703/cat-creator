@@ -1,9 +1,8 @@
 import { ColorType } from "./ColorType";
 import { ItemType } from "./ItemType";
 
-export type AttributeType = {
-    id: number,
-    attribute: string,
+export type SettingOptionType = {
+    id: string,
     url: string,
     checked: boolean,
     itemList: ItemType[],

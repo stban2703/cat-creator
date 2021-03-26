@@ -13,11 +13,11 @@ export const ColorSection: React.FC<ColorSectionProps> = ({ colorList, onEditAtt
         <section className="ColorSection">
             <h3 className="ColorSection__title">Color</h3>
             <div className="ColorSection__items">
-                {colorList.map(({ id, value, checked}) => {
+                {colorList.map(({ id, fill, checked}) => {
                     const intermediateEditColor = () => {
-                        onEditAttributeColor(value);
+                        onEditAttributeColor(fill);
                     }
-                    return <ColorItem key={id} value={value} checked={checked} onEditAttributeColor={intermediateEditColor} />
+                    return <ColorItem key={id} value={fill} checked={checked} onEditAttributeColor={intermediateEditColor} />
                 })}
             </div>
         </section>
