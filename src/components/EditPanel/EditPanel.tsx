@@ -1,7 +1,7 @@
 import React from 'react';
 import { SettingOptionType } from '../../utils/SettingOptionType';
-import { EditSelection } from '../EditSelection/EditSelection';
-import { EditOptions } from '../EditOptions/EditOptions';
+import { AttributeSelection } from '../AttributeSelection/AttributeSelection';
+import { AttributeOptions } from '../AttributeOptions/AttributeOptions';
 import './EditPanel.css';
 
 interface EditPanelProps {
@@ -37,8 +37,8 @@ export const EditPanel: React.FC<EditPanelProps> = ({ settingOptions, currentAtt
 
     return (
         <article className="EditPanel">
-            <EditSelection settingOptions={settingOptions} onChangeCurrentAttribute={onChangeCurrentAttribute} />
-            <EditOptions currentAttribute={currentAttribute} onEditAttributeType={onEditAttributeType} onEditAttributeColor={onEditAttributeColor} itemList={itemList} colorList={colorList} />
+            <AttributeSelection settingOptions={settingOptions} onChangeCurrentAttribute={onChangeCurrentAttribute} />
+            <AttributeOptions currentAttribute={currentAttribute} onEditAttributeType={onEditAttributeType} onEditAttributeColor={onEditAttributeColor} itemList={itemList} colorList={colorList} />
         </article>
     )
 }

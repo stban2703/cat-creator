@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-.EditSection {
+.AttributeTypeSection {
     display: flex;
     flex-direction: column;
 }
 
-.EditSection__title {
+.AttributeTypeSection__title {
     font-size: 1.2rem;
     font-family: 'Poppins', sans-serif;
     margin: 10px 0;
     color: #808183;
 }
 
-.EditSection__items {
+.AttributeTypeSection__items {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

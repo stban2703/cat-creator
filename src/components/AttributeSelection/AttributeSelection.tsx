@@ -1,21 +1,21 @@
 import React from 'react';
 import { SettingOptionType } from '../../utils/SettingOptionType';
-import { SettingOptionItem } from '../SettingOptionItem/SettingOptionItem';
-import './EditSelection.css';
+import { AttributeItem } from '../AttributeItem/AttributeItem';
+import './AttributeSelection.css';
 
-interface EditSelectionProps {
+interface AttributeSelectionProps {
     settingOptions: SettingOptionType[];
     onChangeCurrentAttribute: (newCurrentAttribute: string) => void;
 }
 
-export const EditSelection: React.FC<EditSelectionProps> = ({ settingOptions, onChangeCurrentAttribute }) => {
+export const AttributeSelection: React.FC<AttributeSelectionProps> = ({ settingOptions, onChangeCurrentAttribute }) => {
     return (
-        <section className="EditSelection">
+        <section className="AttributeSelection">
             {settingOptions.map(({ id, url, checked }) => {
                 const intermediateChangeAttribute = () => {
                     onChangeCurrentAttribute(id)
                 }
-                return <SettingOptionItem key={id} value={id} url={url} checked={checked} onChangeCurrentAttribute={intermediateChangeAttribute}/>
+                return <AttributeItem key={id} value={id} url={url} checked={checked} onChangeCurrentAttribute={intermediateChangeAttribute}/>
             })}
         </section>
     )

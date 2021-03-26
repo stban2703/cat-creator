@@ -1,4 +1,4 @@
-.SettingOptionItem {
+.AttributeItem {
     width: 100%;
     margin: 8px 5px;
     background: #ACACAC;
@@ -10,15 +10,15 @@
     overflow: hidden;
 }
 
-.SettingOptionItem:hover {
+.AttributeItem:hover {
     cursor: pointer;
 }
 
-.SettingOptionItem--selected {
+.AttributeItem--selected {
     background: #FFFFFF;
 }
 
-.SettingOptionItem__image {
+.AttributeItem__image {
     max-width: none;
     width: 100%;
 }
