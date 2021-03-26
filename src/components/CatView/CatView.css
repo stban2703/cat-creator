@@ -1,10 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 .CatView {
     width: 800px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden
+}
+
+.CatView__name {
+    color: darkblue;
+    position: absolute;
+    left: 10px;
+    top: 0;
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
 }
 
 .CatView__model {
-    height: 95%;
+    height: 100%;
+    padding: 5px 0;
+    transition: all .5s ease;
+}
+
+.CatView__model--eyes {
+    transform: scale(2.5) translate(-50px, 200px);
+    transition: all .5s ease-out;
+}
+
+.CatView__model--necklace {
+    transform: scale(2.5) translate(-50px, 50px);
+    transition: all .5s ease-out;
+}
+
+.CatView__model--hat {
+    transform: scale(2.5) translate(-50px, 350px);
+    transition: all .5s ease-out;
 }

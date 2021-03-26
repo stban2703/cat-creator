@@ -5,14 +5,31 @@ import './CatView.css';
 
 interface CatViewProps {
     catProps: CatPropsType;
+    currentAttribute: string;
 }
 
-export const CatView: React.FC<CatViewProps> = ({ catProps }) => {
+export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) => {
     const catFur = catProps.settings[0];
     const catEyes = catProps.settings[1];
+
+    const setCamera = (currentAttribute: string) => {
+        switch (currentAttribute) {
+            case "fur":
+                return "";
+            case "eyes":
+                return "CatView__model--eyes";
+            case "necklace":
+                return "CatView__model--necklace"
+            case "hat":
+                return "CatView__model--hat"
+        }
+    }
+
+    const camera = setCamera(currentAttribute)
+
     return (
         <article className="CatView">
-            <SvgLoader className="CatView__model" path={`${process.env.PUBLIC_URL}/images/render/catsvg.svg`}>
+            <SvgLoader className={`CatView__model ${camera}`} path={`${process.env.PUBLIC_URL}/images/render/catsvg.svg`}>
                 <SvgProxy selector="#eye-left-color" fill={catEyes.fill} />
                 <SvgProxy selector="#eye-right-color" fill={catEyes.fill} />
                 <SvgProxy selector="#head" fill={catFur.fill} />
