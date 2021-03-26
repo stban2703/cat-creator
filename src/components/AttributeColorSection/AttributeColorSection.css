@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-.ColorSection {
+.AttributeColorSection {
     display: flex;
     flex-direction: column;
     margin: 8px 0;
 }
 
-.ColorSection__title {
+.AttributeColorSection__title {
     font-size: 1.2rem;
     font-family: 'Poppins', sans-serif;
     margin: 10px 0;
     color: #808183;
 }
 
-.ColorSection__items {
+.AttributeColorSection__items {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

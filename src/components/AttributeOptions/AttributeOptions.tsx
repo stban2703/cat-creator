@@ -2,7 +2,7 @@ import React from 'react';
 import { ColorType } from '../../utils/ColorType';
 import { getTitleFromAttribute } from '../../utils/getTitleFromAttribute';
 import { ItemType } from '../../utils/ItemType';
-import { ColorSection } from '../ColorSection/ColorSection';
+import { AttributeColorSection } from '../AttributeColorSection/AttributeColorSection';
 import { AttributeTypeSection } from '../AttributeTypeSection/AttributeTypeSection';
 import "./AttributeOptions.css";
 
@@ -22,7 +22,7 @@ export const AttributeOptions: React.FC<AttributeOptionsProps> = ({ currentAttri
         <section className="AttributeOptions">
             <h2 className="AttributeOptions__title">{title}</h2>
             <AttributeTypeSection itemList={itemList} onEditAttributeType={onEditAttributeType} />
-            <ColorSection colorList={colorList} onEditAttributeColor={onEditAttributeColor} />
+            <AttributeColorSection colorList={colorList} onEditAttributeColor={onEditAttributeColor} />
         </section>
     )
 }

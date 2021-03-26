@@ -1,4 +1,4 @@
-.ColorItem {
+.AttributeColorItem {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,15 +9,15 @@
     height: 63px;
 }
 
-.ColorItem:hover {
+.AttributeColorItem:hover {
     cursor: pointer;
 }
 
-.ColorItem__check {
+.AttributeColorItem__check {
     display: inline;
     z-index: 1;
 }
 
-.ColorItem__check--remove {
+.AttributeColorItem__check--remove {
     display: none;
 }
