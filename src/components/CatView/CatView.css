@@ -4,3 +4,7 @@
     align-items: center;
     justify-content: center;
 }
+
+.CatView__model {
+    height: 95%;
+}

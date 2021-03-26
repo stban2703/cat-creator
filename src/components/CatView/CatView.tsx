@@ -12,7 +12,7 @@ export const CatView: React.FC<CatViewProps> = ({ catProps }) => {
     const catEyes = catProps.settings[1];
     return (
         <article className="CatView">
-            <SvgLoader path={`${process.env.PUBLIC_URL}/images/render/catsvg.svg`}>
+            <SvgLoader class="CatView__model" path={`${process.env.PUBLIC_URL}/images/render/catsvg.svg`}>
                 <SvgProxy selector="#eye-left-color" fill={catEyes.fill} />
                 <SvgProxy selector="#eye-right-color" fill={catEyes.fill} />
                 <SvgProxy selector="#head" fill={catFur.fill} />
