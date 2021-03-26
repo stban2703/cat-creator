@@ -1,34 +1,34 @@
 import React from 'react';
-import { SettingOptionType } from '../../utils/SettingOptionType';
+import { AttributeOptionType } from '../../utils/AttributeOptionType';
 import { AttributeSelection } from '../AttributeSelection/AttributeSelection';
 import { AttributeOptions } from '../AttributeOptions/AttributeOptions';
 import './EditPanel.css';
 
 interface EditPanelProps {
-    settingOptions: SettingOptionType[];
+    attributeOptions: AttributeOptionType[];
     currentAttribute: string;
     onEditAttributeType: (newType: string) => void;
     onEditAttributeColor: (newColor: string) => void;
     onChangeCurrentAttribute: (newCurrentAttribute: string) => void;
 }
 
-export const EditPanel: React.FC<EditPanelProps> = ({ settingOptions, currentAttribute, onEditAttributeType, onEditAttributeColor, onChangeCurrentAttribute }) => {
+export const EditPanel: React.FC<EditPanelProps> = ({ attributeOptions, currentAttribute, onEditAttributeType, onEditAttributeColor, onChangeCurrentAttribute }) => {
 
     const getItemListFromId = (newAttribute: string) => {
-        const copy = settingOptions.slice();
+        const copy = attributeOptions.slice();
         const index = copy.findIndex((elem) => {
             return elem.id === newAttribute;
         })
-        const newItemList = settingOptions[index].itemList;
+        const newItemList = attributeOptions[index].itemList;
         return newItemList;
     };
 
     const getColorListFromId = (newAttribute: string) => {
-        const copy = settingOptions.slice();
+        const copy = attributeOptions.slice();
         const index = copy.findIndex((elem) => {
             return elem.id === newAttribute;
         })
-        const newColorList = settingOptions[index].colorList;
+        const newColorList = attributeOptions[index].colorList;
         return newColorList;
     }
 
@@ -37,7 +37,7 @@ export const EditPanel: React.FC<EditPanelProps> = ({ settingOptions, currentAtt
 
     return (
         <article className="EditPanel">
-            <AttributeSelection settingOptions={settingOptions} onChangeCurrentAttribute={onChangeCurrentAttribute} />
+            <AttributeSelection attributeOptions={attributeOptions} onChangeCurrentAttribute={onChangeCurrentAttribute} />
             <AttributeOptions currentAttribute={currentAttribute} onEditAttributeType={onEditAttributeType} onEditAttributeColor={onEditAttributeColor} itemList={itemList} colorList={colorList} />
         </article>
     )

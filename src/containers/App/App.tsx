@@ -5,15 +5,15 @@ import { Creator } from '../Creator/Creator';
 import './App.css';
 
 import { initialCatProps } from './initialCatProps';
-import { initialSettingsOptions } from './initialSettingsOptions';
+import { initialAttributeOptions } from './initialSettingsOptions';
 
 export const App = () => {
     const [catProps, setCatProps] = useState(initialCatProps);
-    const [settingsOptions, setAttributeList] = useState(initialSettingsOptions);
+    const [attributeOptions, setAttributeList] = useState(initialAttributeOptions);
     const [currentAttribute, setCurrentAttribute] = useState("fur");
 
     const handleCurrentAttribute = (newCurrentAttribute: string) => {
-        const copy = settingsOptions.slice();
+        const copy = attributeOptions.slice();
         copy.forEach(e => {
             if (e.id === newCurrentAttribute) {
                 e.checked = true;
@@ -31,7 +31,7 @@ export const App = () => {
 
         catPropsCopy.settings[catSettingsIndex].type = newType;
 
-        const settingsOptionsCopy = settingsOptions.slice();
+        const settingsOptionsCopy = attributeOptions.slice();
         const settingsOptionsIndex = settingsOptionsCopy.findIndex(elem => {
             return elem.id === currentAttribute;
         })
@@ -56,7 +56,7 @@ export const App = () => {
 
         catPropsCopy.settings[catSettingsIndex].fill = newColor;
 
-        const settingsOptionsCopy = initialSettingsOptions.slice();
+        const settingsOptionsCopy = initialAttributeOptions.slice();
         const settingsOptionsIndex = settingsOptionsCopy.findIndex((elem) => {
             return elem.id === currentAttribute;
         })
@@ -77,7 +77,7 @@ export const App = () => {
         <main className="App">
             <HashRouter basename={process.env.PUBLIC_URL}>
                 <Route path="/" render={() =>
-                    <Creator catProps={catProps} settingsOptions={settingsOptions} currentAttribute={currentAttribute} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor} onChangeCurrentAttribute={handleCurrentAttribute} />}
+                    <Creator catProps={catProps} attributeOptions={attributeOptions} currentAttribute={currentAttribute} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor} onChangeCurrentAttribute={handleCurrentAttribute} />}
                 />
             </HashRouter>
         </main>

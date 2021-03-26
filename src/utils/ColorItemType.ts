@@ -1,4 +1,4 @@
-export type ColorType = {
+export type ColorItemType = {
     id: number,
     fill: string,
     shadow: string,

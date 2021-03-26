@@ -1,17 +1,17 @@
 import React from 'react';
-import { SettingOptionType } from '../../utils/SettingOptionType';
+import { AttributeOptionType } from '../../utils/AttributeOptionType';
 import { AttributeItem } from '../AttributeItem/AttributeItem';
 import './AttributeSelection.css';
 
 interface AttributeSelectionProps {
-    settingOptions: SettingOptionType[];
+    attributeOptions: AttributeOptionType[];
     onChangeCurrentAttribute: (newCurrentAttribute: string) => void;
 }
 
-export const AttributeSelection: React.FC<AttributeSelectionProps> = ({ settingOptions, onChangeCurrentAttribute }) => {
+export const AttributeSelection: React.FC<AttributeSelectionProps> = ({ attributeOptions, onChangeCurrentAttribute }) => {
     return (
         <section className="AttributeSelection">
-            {settingOptions.map(({ id, url, checked }) => {
+            {attributeOptions.map(({ id, url, checked }) => {
                 const intermediateChangeAttribute = () => {
                     onChangeCurrentAttribute(id)
                 }

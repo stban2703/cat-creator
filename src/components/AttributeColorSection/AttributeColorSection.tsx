@@ -1,10 +1,10 @@
 import React from 'react';
-import { ColorType } from '../../utils/ColorType';
+import { ColorItemType } from '../../utils/ColorItemType';
 import { AttributeColorItem } from '../AttributeColorItem/AttributeColorItem';
 import './AttributeColorSection.css';
 
 interface AttributeColorSectionProps {
-    colorList: ColorType[];
+    colorList: ColorItemType[];
     onEditAttributeColor: (newColor: string) => void;
 }
 

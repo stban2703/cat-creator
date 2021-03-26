@@ -1,15 +1,15 @@
 import React from 'react';
-import { ColorType } from '../../utils/ColorType';
+import { ColorItemType } from '../../utils/ColorItemType';
 import { getTitleFromAttribute } from '../../utils/getTitleFromAttribute';
-import { ItemType } from '../../utils/ItemType';
+import { TypeItemType } from '../../utils/TypeItemType';
 import { AttributeColorSection } from '../AttributeColorSection/AttributeColorSection';
 import { AttributeTypeSection } from '../AttributeTypeSection/AttributeTypeSection';
 import "./AttributeOptions.css";
 
 interface AttributeOptionsProps {
     currentAttribute: string;
-    itemList: ItemType[];
-    colorList: ColorType[];
+    itemList: TypeItemType[];
+    colorList: ColorItemType[];
     onEditAttributeType: (newType: string) => void;
     onEditAttributeColor: (newColor:string) => void;
 }

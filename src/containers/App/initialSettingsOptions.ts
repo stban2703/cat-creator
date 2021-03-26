@@ -1,4 +1,4 @@
-export const initialSettingsOptions = [
+export const initialAttributeOptions = [
     {
         id: "fur",
         url: "attributes/fur",
