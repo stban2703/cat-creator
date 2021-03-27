@@ -12,7 +12,7 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
     const catFur = catProps.settings[0];
     const catEyes = catProps.settings[1];
 
-    const setCamera = (currentAttribute: string) => {
+    const handleCamera = (currentAttribute: string) => {
         switch (currentAttribute) {
             case "fur":
                 return "";
@@ -25,7 +25,7 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
         }
     }
 
-    const camera = setCamera(currentAttribute)
+    const camera = handleCamera(currentAttribute)
 
     return (
         <article className="CatView">
