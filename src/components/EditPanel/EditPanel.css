@@ -1,4 +1,5 @@
 .EditPanel {
     width: 100%;
-    max-width: 670px;
+    max-width: 700px;
+    z-index: 1;
 }

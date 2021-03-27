@@ -22,6 +22,7 @@ export const Creator: React.FC<CreatorProps> = ({ catProps, attributeOptions, cu
     return (
         <article className="Creator">
             <CatView catProps={catProps} currentAttribute={currentAttribute} />
+            <div className="Creator__empty"></div>
             <EditPanel attributeOptions={attributeOptions} currentAttribute={currentAttribute} onEditAttributeType={onEditAttributeType} onEditAttributeColor={onEditAttributeColor} onChangeCurrentAttribute={onChangeCurrentAttribute} />
         </article>
     )

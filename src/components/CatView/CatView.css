@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .CatView {
-    width: 800px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .CatView__name {
@@ -21,6 +22,7 @@
 
 .CatView__model {
     height: 100%;
+    align-self: flex-start;
     padding: 5px 0;
     transition: all .5s ease;
 }
