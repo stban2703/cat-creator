@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Route } from 'react-router';
 import { HashRouter } from 'react-router-dom';
 import { Creator } from '../Creator/Creator';
+import { Intro } from '../Intro/Intro';
 import './App.css';
 
 import { initialCatProps } from './initialCatProps';
@@ -76,7 +77,8 @@ export const App = () => {
     return (
         <main className="App">
             <HashRouter basename={process.env.PUBLIC_URL}>
-                <Route path="/" render={() =>
+                <Route path="/" exact render={() => <Intro />} />
+                <Route path="/create" render={() =>
                     <Creator catProps={catProps} attributeOptions={attributeOptions} currentAttribute={currentAttribute} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor} onChangeCurrentAttribute={handleCurrentAttribute} />}
                 />
             </HashRouter>
