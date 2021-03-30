@@ -1,10 +1,8 @@
 import React from 'react';
+import { getSubtitleFromAttribute } from '../../utils/getSubtitleFromAttribute';
 import { getTitleFromAttribute } from '../../utils/getTitleFromAttribute';
 import { TypeItemType } from '../../utils/TypeItemType';
-import { EyeOptions } from '../EyesOptions/EyesOptions';
-import { FurOptions } from '../FurOptions/FurOptions';
-import { HatOptions } from '../HatOptions/HatOptions';
-import { NecklaceOptions } from '../NecklaceOptions/NecklaceOptions';
+import { AttributeTypeSection } from '../AttributeTypeSection/AttributeTypeSection';
 import "./AttributeOptions.css";
 
 interface AttributeOptionsProps {
@@ -18,37 +16,22 @@ export const AttributeOptions: React.FC<AttributeOptionsProps> = ({ currentAttri
 
     const title = getTitleFromAttribute(currentAttribute);
 
+    const subtitle = getSubtitleFromAttribute(currentAttribute);
+
     switch (currentAttribute) {
         case "fur":
+            return (
+                <section className="AttributeOptions">
+                    <h2 className="AttributeOptions__title">{title}</h2>
+                    <AttributeTypeSection itemList={itemList} subtitle={subtitle!} onEditAttributeType={onEditAttributeType}/>
+                </section>
+            )
+
         default:
             return (
                 <section className="AttributeOptions">
                     <h2 className="AttributeOptions__title">{title}</h2>
-                    <FurOptions typeList={itemList} onEditAttributeType={onEditAttributeType} />
-                </section>
-            )
-
-        case "eyes":
-            return (
-                <section className="AttributeOptions">
-                    <h2 className="AttributeOptions__title">{title}</h2>
-                    <EyeOptions typeList={itemList} onEditAttributeType={onEditAttributeType} onEditAttributeColor={onEditAttributeColor} />
-                </section>
-            )
-
-        case "necklace":
-            return (
-                <section className="AttributeOptions">
-                    <h2 className="AttributeOptions__title">{title}</h2>
-                    <NecklaceOptions typeList={itemList} onEditAttributeType={onEditAttributeType} onEditAttributeColor={onEditAttributeColor} />
-                </section>
-            )
-
-        case "hat":
-            return (
-                <section className="AttributeOptions">
-                    <h2 className="AttributeOptions__title">{title}</h2>
-                    <HatOptions typeList={itemList} onEditAttributeType={onEditAttributeType} onEditAttributeColor={onEditAttributeColor} />
+                    <AttributeTypeSection itemList={itemList} subtitle={subtitle!} onEditAttributeType={onEditAttributeType}/>
                 </section>
             )
     }

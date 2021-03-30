@@ -4,13 +4,14 @@ import './AttributeTypeSection.css';
 
 interface AttributeTypeSectionProps {
     itemList: { id: number, value: string, url: string, checked: boolean }[];
+    subtitle: string;
     onEditAttributeType: (newType: string) => void;
 }
 
-export const AttributeTypeSection: React.FC<AttributeTypeSectionProps> = ({ itemList, onEditAttributeType }) => {
+export const AttributeTypeSection: React.FC<AttributeTypeSectionProps> = ({ itemList, subtitle, onEditAttributeType }) => {
     return (
         <section className="AttributeTypeSection">
-            <h3 className="AttributeTypeSection__title">Tipo</h3>
+            <h3 className="AttributeTypeSection__title">{subtitle}</h3>
             <div className="AttributeTypeSection__items">
                 {itemList.map(({ id, value, url, checked }) => {
                     const intermediateEditType = () => {
