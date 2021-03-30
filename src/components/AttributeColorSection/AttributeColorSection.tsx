@@ -1,6 +1,7 @@
 import React from 'react';
 import { ColorItemType } from '../../utils/ColorItemType';
 import { AttributeColorItem } from '../AttributeColorItem/AttributeColorItem';
+import { SketchPicker } from 'react-color';
 import './AttributeColorSection.css';
 
 interface AttributeColorSectionProps {
