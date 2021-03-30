@@ -23,22 +23,12 @@ export const EditPanel: React.FC<EditPanelProps> = ({ attributeOptions, currentA
         return newItemList;
     };
 
-    const getColorListFromId = (newAttribute: string) => {
-        const copy = attributeOptions.slice();
-        const index = copy.findIndex((elem) => {
-            return elem.id === newAttribute;
-        })
-        const newColorList = attributeOptions[index].colorList;
-        return newColorList;
-    }
-
     const itemList = getItemListFromId(currentAttribute);
-    const colorList = getColorListFromId(currentAttribute);
 
     return (
         <article className="EditPanel">
             <AttributeSelection attributeOptions={attributeOptions} onChangeCurrentAttribute={onChangeCurrentAttribute} />
-            <AttributeOptions currentAttribute={currentAttribute} onEditAttributeType={onEditAttributeType} onEditAttributeColor={onEditAttributeColor} itemList={itemList} colorList={colorList} />
+            <AttributeOptions currentAttribute={currentAttribute} onEditAttributeType={onEditAttributeType} onEditAttributeColor={onEditAttributeColor} itemList={itemList} />
         </article>
     )
 }

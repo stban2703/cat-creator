@@ -4,9 +4,8 @@ import { HashRouter } from 'react-router-dom';
 import { Creator } from '../Creator/Creator';
 import { Intro } from '../Intro/Intro';
 import './App.css';
-
 import { initialCatProps } from './initialCatProps';
-import { initialAttributeOptions } from './initialSettingsOptions';
+import { initialAttributeOptions } from './initialAttributeOptions';
 
 export const App = () => {
     const [catProps, setCatProps] = useState(initialCatProps);
@@ -45,33 +44,27 @@ export const App = () => {
             }
         })
 
+        if(currentAttribute === "fur") {
+            console.log(catPropsCopy.settings[catSettingsIndex].type)
+        }
+
         setCatProps(catPropsCopy);
         setAttributeList(settingsOptionsCopy);
     }
 
     const handleAttributeColor = (newColor: string) => {
         const catPropsCopy = { ...catProps };
-        const catSettingsIndex = catPropsCopy.settings.findIndex((elem) => {
+        const catSettingsCopy = catPropsCopy.settings;
+
+        const catSettingsIndex = catSettingsCopy.findIndex((elem) => {
             return elem.id === currentAttribute;
         });
 
-        catPropsCopy.settings[catSettingsIndex].fill = newColor;
+        catSettingsCopy[catSettingsIndex].fill = newColor;
 
-        const settingsOptionsCopy = initialAttributeOptions.slice();
-        const settingsOptionsIndex = settingsOptionsCopy.findIndex((elem) => {
-            return elem.id === currentAttribute;
-        })
-
-        settingsOptionsCopy[settingsOptionsIndex].colorList.forEach(elem => {
-            if (elem.fill === catPropsCopy.settings[catSettingsIndex].fill) {
-                elem.checked = true;
-            } else {
-                elem.checked = false;
-            }
-        })
+        catPropsCopy.settings = catSettingsCopy;
 
         setCatProps(catPropsCopy);
-        setAttributeList(settingsOptionsCopy);
     }
 
     return (

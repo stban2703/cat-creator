@@ -1,4 +1,3 @@
-import { ColorItemType } from "./ColorItemType";
 import { TypeItemType } from "./TypeItemType";
 
 export type AttributeOptionType = {
@@ -6,5 +5,4 @@ export type AttributeOptionType = {
     url: string,
     checked: boolean,
     itemList: TypeItemType[],
-    colorList: ColorItemType[]
 }

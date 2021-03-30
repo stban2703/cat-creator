@@ -1,5 +1,4 @@
 import React from 'react';
-import { ColorItemType } from '../../utils/ColorItemType';
 import { getTitleFromAttribute } from '../../utils/getTitleFromAttribute';
 import { TypeItemType } from '../../utils/TypeItemType';
 import { EyeOptions } from '../EyesOptions/EyesOptions';
@@ -11,12 +10,11 @@ import "./AttributeOptions.css";
 interface AttributeOptionsProps {
     currentAttribute: string;
     itemList: TypeItemType[];
-    colorList: ColorItemType[];
     onEditAttributeType: (newType: string) => void;
     onEditAttributeColor: (newColor: string) => void;
 }
 
-export const AttributeOptions: React.FC<AttributeOptionsProps> = ({ currentAttribute, itemList, colorList, onEditAttributeType, onEditAttributeColor }) => {
+export const AttributeOptions: React.FC<AttributeOptionsProps> = ({ currentAttribute, itemList, onEditAttributeType, onEditAttributeColor }) => {
 
     const title = getTitleFromAttribute(currentAttribute);
 
@@ -26,7 +24,7 @@ export const AttributeOptions: React.FC<AttributeOptionsProps> = ({ currentAttri
             return (
                 <section className="AttributeOptions">
                     <h2 className="AttributeOptions__title">{title}</h2>
-                    <FurOptions typeList={itemList} colorList={colorList} onEditAttributeType={onEditAttributeType} onEditAttributeColor={onEditAttributeColor} />
+                    <FurOptions typeList={itemList} onEditAttributeType={onEditAttributeType} />
                 </section>
             )
 

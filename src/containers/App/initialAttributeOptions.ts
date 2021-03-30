@@ -8,47 +8,31 @@ export const initialAttributeOptions = [
                 id: 0,
                 value: "blank",
                 url: "items/blank",
-                checked: true
+                checked: true,
             },
             {
                 id: 1,
                 value: "lines",
                 url: "items/lines",
-                checked: false
+                checked: false,
             },
             {
                 id: 2,
                 value: "colorAndWhite",
                 url: "items/colorAndWhite",
-                checked: false
+                checked: false,
             },
             {
                 id: 3,
                 value: "siamese",
                 url: "items/siamese",
-                checked: false
+                checked: false,
             },
             {
                 id: 4,
                 value: "tricolor",
                 url: "items/tricolor",
-                checked: false
-            }
-        ],
-        colorList: [
-            {
-                id: 0,
-                fill: "#FFFFFF",
-                shadow: "#EBEBEB",
-                stroke: "#AFAFAF",
-                checked: true
-            },
-            {
-                id: 1,
-                fill: "#303030",
-                shadow: "#000000",
-                stroke: "#AFAFAF",
-                checked: false
+                checked: false,
             }
         ]
     },
@@ -77,29 +61,6 @@ export const initialAttributeOptions = [
                 checked: false
             }
         ],
-        colorList: [
-            {
-                id: 0,
-                fill: "#0BF86A",
-                shadow: "none",
-                stroke: "none",
-                checked: true
-            },
-            {
-                id: 1,
-                fill: "#05F0FF",
-                shadow: "none",
-                stroke: "none",
-                checked: false
-            },
-            {
-                id: 2,
-                fill: "#FF78CB",
-                shadow: "none",
-                stroke: "none",
-                checked: false
-            }
-        ]
     },
     {
         id: "necklace",
@@ -131,29 +92,6 @@ export const initialAttributeOptions = [
                 checked: false
             }
         ],
-        colorList: [
-            {
-                id: 0,
-                fill: "#ffffff",
-                shadow: "none",
-                stroke: "none",
-                checked: true
-            },
-            {
-                id: 1,
-                fill: "#000000",
-                shadow: "none",
-                stroke: "none",
-                checked: false
-            },
-            {
-                id: 2,
-                fill: "#DC1515",
-                shadow: "none",
-                stroke: "none",
-                checked: false
-            }
-        ]
     },
     {
         id: "hat",
@@ -179,28 +117,5 @@ export const initialAttributeOptions = [
                 checked: false
             }
         ],
-        colorList: [
-            {
-                id: 0,
-                fill: "#ffffff",
-                shadow: "none",
-                stroke: "none",
-                checked: true
-            },
-            {
-                id: 1,
-                fill: "#000000",
-                shadow: "none",
-                stroke: "none",
-                checked: false
-            },
-            {
-                id: 2,
-                fill: "#DC1515",
-                shadow: "none",
-                stroke: "none",
-                checked: false
-            }
-        ]
     }
 ];
