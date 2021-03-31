@@ -52,7 +52,7 @@ export const App = () => {
         setAttributeList(settingsOptionsCopy);
     }
 
-    const handleAttributeColor = (newColor: string) => {
+    const handleAttributeColor = (colorFill: string, colorStroke: string) => {
         const catPropsCopy = { ...catProps };
         const catSettingsCopy = catPropsCopy.settings;
 
@@ -60,7 +60,8 @@ export const App = () => {
             return elem.id === currentAttribute;
         });
 
-        catSettingsCopy[catSettingsIndex].fill = newColor;
+        catSettingsCopy[catSettingsIndex].fill = colorFill;
+        catSettingsCopy[catSettingsIndex].stroke = colorStroke;
 
         catPropsCopy.settings = catSettingsCopy;
 

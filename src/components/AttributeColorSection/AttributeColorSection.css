@@ -2,6 +2,7 @@
 
 .AttributeColorSection {
     display: flex;
+    width: 100%;
     flex-direction: column;
     margin: 8px 0;
 }
@@ -11,10 +12,4 @@
     font-family: 'Poppins', sans-serif;
     margin: 10px 0;
     color: #808183;
-}
-
-.AttributeColorSection__items {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
 }

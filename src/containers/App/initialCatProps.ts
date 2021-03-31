@@ -8,7 +8,7 @@ export const initialCatProps = {
             type: "blank",
             fill: "#ffffff",
             shadow: "#EBEBEB",
-            stroke: "AFAFAF"
+            stroke: "#AFAFAF"
         },
         {
             id: "eyes",

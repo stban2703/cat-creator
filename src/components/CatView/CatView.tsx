@@ -11,7 +11,7 @@ interface CatViewProps {
 export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) => {
     const catFur = catProps.settings[0];
     const catEyes = catProps.settings[1];
-
+    console.log(catFur.stroke)
     const handleCamera = (currentAttribute: string) => {
         switch (currentAttribute) {
             case "fur":
@@ -32,17 +32,24 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
             <SvgLoader className={`CatView__model ${camera}`} path={`${process.env.PUBLIC_URL}/images/render/catrender.svg`}>
                 <SvgProxy selector="#eye-left-color" fill={catEyes.fill} />
                 <SvgProxy selector="#eye-right-color" fill={catEyes.fill} />
-                <SvgProxy selector="#head" fill={catFur.fill} />
-                <SvgProxy selector="#ear-left-outside" fill={catFur.fill} />
-                <SvgProxy selector="#ear-right-outside" fill={catFur.fill} />
-                <SvgProxy selector="#body-front" fill={catFur.fill} />
-                <SvgProxy selector="#body-back" fill={catFur.fill} />
-                <SvgProxy selector="#tail" fill={catFur.fill} />
+                <SvgProxy selector="#eye-left-shadow" fill={catFur.stroke} />
+                <SvgProxy selector="#eye-right-shadow" fill={catFur.stroke} />
+                <SvgProxy selector="#mouth" fill={catFur.stroke} />
+                <SvgProxy selector="#whisker-left-1" fill={catFur.stroke} />
+                <SvgProxy selector="#whisker-left-2" fill={catFur.stroke} />
+                <SvgProxy selector="#whisker-left-3" fill={catFur.stroke} />
+                <SvgProxy selector="#whisker-right-1" fill={catFur.stroke} />
+                <SvgProxy selector="#whisker-right-2" fill={catFur.stroke} />
+                <SvgProxy selector="#whisker-right-3" fill={catFur.stroke} />
+                <SvgProxy selector="#head" fill={catFur.fill} stroke={catFur.stroke} />
+                <SvgProxy selector="#ear-left-outside" fill={catFur.fill} stroke={catFur.stroke} />
+                <SvgProxy selector="#ear-right-outside" fill={catFur.fill} stroke={catFur.stroke} />
+                <SvgProxy selector="#body-front" fill={catFur.fill} stroke={catFur.stroke} />
+                <SvgProxy selector="#body-back" fill={catFur.fill} stroke={catFur.stroke}  />
+                <SvgProxy selector="#paw-left" fill={catFur.fill} stroke={catFur.stroke} />
+                <SvgProxy selector="#paw-right" fill={catFur.fill} stroke={catFur.stroke} />
+                <SvgProxy selector="#tail" fill={catFur.fill} stroke={catFur.stroke} />
             </SvgLoader>
-            {/*<h4>Atributo: {catProps[0].attribute} = Tipo: {catProps[0].type} y Color: {catProps[0].color}</h4>
-            <h4>Atributo: {catProps[1].attribute} = Tipo: {catProps[1].type} y Color: {catProps[1].color}</h4>
-            <h4>Atributo: {catProps[2].attribute} = Tipo: {catProps[2].type} y Color: {catProps[2].color}</h4>
-    <h4>Atributo: {catProps[3].attribute} = Tipo: {catProps[3].type} y Color: {catProps[3].color}</h4>*/}
         </article>
     )
 }

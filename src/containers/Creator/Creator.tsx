@@ -11,7 +11,7 @@ interface CreatorProps {
     attributeOptions: AttributeOptionType[];
     currentAttribute: string;
     onEditAttributeType: (newType: string) => void;
-    onEditAttributeColor: (newColor: string) => void;
+    onEditAttributeColor: (colorFill: string, colorStroke: string) => void;
     onChangeCurrentAttribute: (newCurrentAttribute: string) => void;
 }
 
