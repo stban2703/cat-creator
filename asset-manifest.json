@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/cat-creator/static/css/main.9e3866c8.chunk.css",
-    "main.js": "/cat-creator/static/js/main.896c04a5.chunk.js",
-    "main.js.map": "/cat-creator/static/js/main.896c04a5.chunk.js.map",
+    "main.css": "/cat-creator/static/css/main.36fe7e02.chunk.css",
+    "main.js": "/cat-creator/static/js/main.ba62c363.chunk.js",
+    "main.js.map": "/cat-creator/static/js/main.ba62c363.chunk.js.map",
     "runtime-main.js": "/cat-creator/static/js/runtime-main.fdced6d6.js",
     "runtime-main.js.map": "/cat-creator/static/js/runtime-main.fdced6d6.js.map",
-    "static/js/2.e2cd742a.chunk.js": "/cat-creator/static/js/2.e2cd742a.chunk.js",
-    "static/js/2.e2cd742a.chunk.js.map": "/cat-creator/static/js/2.e2cd742a.chunk.js.map",
+    "static/js/2.6972ba7b.chunk.js": "/cat-creator/static/js/2.6972ba7b.chunk.js",
+    "static/js/2.6972ba7b.chunk.js.map": "/cat-creator/static/js/2.6972ba7b.chunk.js.map",
     "index.html": "/cat-creator/index.html",
-    "static/css/main.9e3866c8.chunk.css.map": "/cat-creator/static/css/main.9e3866c8.chunk.css.map",
-    "static/js/2.e2cd742a.chunk.js.LICENSE.txt": "/cat-creator/static/js/2.e2cd742a.chunk.js.LICENSE.txt"
+    "static/css/main.36fe7e02.chunk.css.map": "/cat-creator/static/css/main.36fe7e02.chunk.css.map",
+    "static/js/2.6972ba7b.chunk.js.LICENSE.txt": "/cat-creator/static/js/2.6972ba7b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.fdced6d6.js",
-    "static/js/2.e2cd742a.chunk.js",
-    "static/css/main.9e3866c8.chunk.css",
-    "static/js/main.896c04a5.chunk.js"
+    "static/js/2.6972ba7b.chunk.js",
+    "static/css/main.36fe7e02.chunk.css",
+    "static/js/main.ba62c363.chunk.js"
   ]
 }
