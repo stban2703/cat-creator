@@ -117,5 +117,30 @@ export const initialAttributeOptions = [
                 checked: false
             }
         ],
+    },
+    {
+        id: "scene",
+        url: "attributes/scene",
+        checked: false,
+        itemList: [
+            {
+                id: 0,
+                value: "blank",
+                url: "items/blank",
+                checked: true
+            },
+            {
+                id: 1,
+                value: "tophat",
+                url: "items/tophat",
+                checked: false
+            },
+            {
+                id: 2,
+                value: "party",
+                url: "items/party",
+                checked: false
+            }
+        ],
     }
 ];

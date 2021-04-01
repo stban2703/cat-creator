@@ -20,13 +20,13 @@ export const AttributeOptions: React.FC<AttributeOptionsProps> = ({ currentAttri
     const subtitle = getSubtitleFromAttribute(currentAttribute);
 
     switch (currentAttribute) {
-        /*case "fur":
+        case "scene":
             return (
                 <section className="AttributeOptions">
                     <h2 className="AttributeOptions__title">{title}</h2>
-                    <AttributeTypeSection itemList={itemList} subtitle={subtitle!} onEditAttributeType={onEditAttributeType}/>
+                    
                 </section>
-            )*/
+            )
 
         default:
             return (
