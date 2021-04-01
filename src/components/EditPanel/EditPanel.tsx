@@ -3,6 +3,7 @@ import { AttributeOptionType } from '../../utils/AttributeOptionType';
 import { AttributeSelection } from '../AttributeSelection/AttributeSelection';
 import { AttributeOptions } from '../AttributeOptions/AttributeOptions';
 import './EditPanel.css';
+import { CatControl } from '../CatControl/CatControl';
 
 interface EditPanelProps {
     attributeOptions: AttributeOptionType[];
@@ -29,6 +30,7 @@ export const EditPanel: React.FC<EditPanelProps> = ({ attributeOptions, currentA
         <article className="EditPanel">
             <AttributeSelection attributeOptions={attributeOptions} onChangeCurrentAttribute={onChangeCurrentAttribute} />
             <AttributeOptions currentAttribute={currentAttribute} onEditAttributeType={onEditAttributeType} onEditAttributeColor={onEditAttributeColor} itemList={itemList} />
+            <CatControl />
         </article>
     )
 }
