@@ -23,7 +23,7 @@
 .CatView__model {
     height: 100%;
     align-self: flex-start;
-    padding: 5px 0;
+    padding: 40px 10px 10px 0;
     transition: all .5s ease;
 }
 

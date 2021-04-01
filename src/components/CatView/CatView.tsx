@@ -13,7 +13,7 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
     const catEyes = catProps.settings[1];
     const handleCamera = (currentAttribute: string) => {
         switch (currentAttribute) {
-            case "fur":
+            default:
                 return "";
             case "eyes":
                 return "CatView__model--eyes";
@@ -23,9 +23,7 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
                 return "CatView__model--hat"
         }
     }
-
     const camera = handleCamera(currentAttribute)
-
     return (
         <article className="CatView">
             <SvgLoader className={`CatView__model ${camera}`} path={`${process.env.PUBLIC_URL}/images/render/catrender.svg`}>

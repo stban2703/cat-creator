@@ -6,7 +6,7 @@ interface CatControlProps {
 
 }
 
-export const CatControl: React.FC<CatControlProps> = ({ }) => {
+export const CatControl: React.FC<CatControlProps> = () => {
     return (
         <form className="CatControl">
             <input className="CatControl__input" type="text" name="catName" placeholder="Escribe el nombre de tu gato" />
@@ -20,7 +20,7 @@ export const CatControl: React.FC<CatControlProps> = ({ }) => {
                     </button>
                 </div>
                 <div className="CatControl__section">
-                    <Link className="CatControl__btn CatControl__btn--navegate" to={'/intro'}>
+                    <Link className="CatControl__btn CatControl__btn--navegate" to={'/'}>
                         Ver creados
                     </Link>
                 </div>
