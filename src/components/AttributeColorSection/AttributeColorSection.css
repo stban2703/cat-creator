@@ -13,3 +13,11 @@
     margin: 10px 0;
     color: #808183;
 }
+
+.twitter-picker {
+    width: 100% !important;
+}
+
+.twitter-picker div span div {
+    border: 2px solid #808183 !important;
+ }
