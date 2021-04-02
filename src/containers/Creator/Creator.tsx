@@ -10,12 +10,13 @@ interface CreatorProps {
     catProps: CatPropsType;
     attributeOptions: AttributeOptionType[];
     currentAttribute: string;
+    onEditCatName: (newName: string) => void;
     onEditAttributeType: (newType: string) => void;
     onEditAttributeColor: (colorFill: string, colorStroke: string) => void;
     onChangeCurrentAttribute: (newCurrentAttribute: string) => void;
 }
 
-export const Creator: React.FC<CreatorProps> = ({ catProps, attributeOptions, currentAttribute, onEditAttributeType, onEditAttributeColor, onChangeCurrentAttribute }) => {
+export const Creator: React.FC<CreatorProps> = ({ catProps, attributeOptions, currentAttribute, onEditCatName, onEditAttributeType, onEditAttributeColor, onChangeCurrentAttribute }) => {
 
     //const { id } = useParams<{ id: string }>();
 
@@ -23,7 +24,7 @@ export const Creator: React.FC<CreatorProps> = ({ catProps, attributeOptions, cu
         <article className="Creator">
             <CatView catProps={catProps} currentAttribute={currentAttribute} />
             <div className="Creator__empty"></div>
-            <EditPanel attributeOptions={attributeOptions} currentAttribute={currentAttribute} onEditAttributeType={onEditAttributeType} onEditAttributeColor={onEditAttributeColor} onChangeCurrentAttribute={onChangeCurrentAttribute} />
+            <EditPanel catName={catProps.catName} onEditCatName={onEditCatName} attributeOptions={attributeOptions} currentAttribute={currentAttribute} onEditAttributeType={onEditAttributeType} onEditAttributeColor={onEditAttributeColor} onChangeCurrentAttribute={onChangeCurrentAttribute} />
         </article>
     )
 }

@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom';
 import './CatControl.css';
 
 interface CatControlProps {
-
+    catName: string;
+    onEditCatName: (newName: string) => void;
 }
 
-export const CatControl: React.FC<CatControlProps> = () => {
-    const [inputValue, setInputValue] = useState("");
-
+export const CatControl: React.FC<CatControlProps> = ({ catName, onEditCatName }) => {
     const handleTextChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
-        setInputValue(event.target.value);
+        onEditCatName(event.target.value);
     }
+    
     return (
         <form className="CatControl">
-            <input className="CatControl__input" type="text" name="catName" value={inputValue} placeholder="Escribe el nombre de tu gato" onChange={handleTextChange}/>
+            <input className="CatControl__input" type="text" name="catName" value={catName} placeholder="Escribe el nombre de tu gato" onChange={handleTextChange} />
             <div className="CatControl__options">
                 <div className="CatControl__section">
                     <button className="CatControl__btn CatControl__btn--green">

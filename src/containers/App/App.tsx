@@ -12,6 +12,12 @@ export const App = () => {
     const [attributeOptions, setAttributeList] = useState(initialAttributeOptions);
     const [currentAttribute, setCurrentAttribute] = useState("fur");
 
+    const handleCatName = (newName: string) => {
+        const catPropsCopy = { ...catProps };
+        catPropsCopy.catName = newName;
+        setCatProps(catPropsCopy);
+    }
+
     const handleCurrentAttribute = (newCurrentAttribute: string) => {
         const copy = attributeOptions.slice();
         copy.forEach(e => {
@@ -44,7 +50,7 @@ export const App = () => {
             }
         })
 
-        if(currentAttribute === "fur") {
+        if (currentAttribute === "fur") {
             console.log(catPropsCopy.settings[catSettingsIndex].type)
         }
 
@@ -73,7 +79,7 @@ export const App = () => {
             <HashRouter basename={process.env.PUBLIC_URL}>
                 <Route path="/" exact render={() => <Intro />} />
                 <Route path="/create" render={() =>
-                    <Creator catProps={catProps} attributeOptions={attributeOptions} currentAttribute={currentAttribute} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor} onChangeCurrentAttribute={handleCurrentAttribute} />}
+                    <Creator catProps={catProps} attributeOptions={attributeOptions} currentAttribute={currentAttribute} onEditCatName={handleCatName} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor} onChangeCurrentAttribute={handleCurrentAttribute} />}
                 />
             </HashRouter>
         </main>

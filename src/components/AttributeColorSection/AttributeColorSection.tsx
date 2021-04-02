@@ -20,7 +20,7 @@ export const AttributeColorSection: React.FC<AttributeColorSectionProps> = ({ on
     return (
         <section className="AttributeColorSection">
             <h3 className="AttributeColorSection__title">Color</h3>
-            <TwitterPicker color={color} onChange={handleColor} colors={['#FFFFFF', '#000000', '#ABB8C3', '#0BF86A', '#8ED1FC', '#FF6900', '#FCB900', '#EB144C', '#F78DA7', '#9900EF'] } />
+            <TwitterPicker color={color} onChange={handleColor} colors={['#FFFFFF', '#000000', '#ABB8C3', 'EBEBEB', '#0BF86A', '#8ED1FC', '#FF6900', '#FCB900', '#EB144C', '#F78DA7', '#9900EF'] } />
         </section>
     )
 }

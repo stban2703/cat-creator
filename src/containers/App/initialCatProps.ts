@@ -1,6 +1,6 @@
 export const initialCatProps = {
     id: 0,
-    catName: "Gato nuevo",
+    catName: "",
     creationDate: Date.now(),
     settings: [
         {
