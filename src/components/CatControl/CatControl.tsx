@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './CatControl.css';
 
@@ -11,7 +11,7 @@ export const CatControl: React.FC<CatControlProps> = ({ catName, onEditCatName }
     const handleTextChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
         onEditCatName(event.target.value);
     }
-    
+
     return (
         <form className="CatControl">
             <input className="CatControl__input" type="text" name="catName" value={catName} placeholder="Escribe el nombre de tu gato" onChange={handleTextChange} />
