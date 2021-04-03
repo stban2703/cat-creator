@@ -31,6 +31,7 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
         }
     }
     const camera = handleCamera(currentAttribute)
+    //#ear-left-linePattern, #ear-right-linePattern
 
     return (
         <article className="CatView">
@@ -39,6 +40,7 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
                 <SvgProxy selector={furOnlyStrokeSelector} fill={catFurProps.stroke} />
                 <SvgProxy selector={furFillAndStrokeSelector} fill={catFurProps.fill} stroke={catFurProps.stroke} />
                 <SvgProxy selector={linesPatternSelector} fill={ catFurProps.type === "lines" ? catFurProps.stroke : catFurProps.fill} />
+                <SvgProxy selector={"#ear-left-linePattern, #ear-right-linePattern"} stroke={ catFurProps.type === "lines" ? "rgba(0, 0, 0, 0.1)" : catFurProps.stroke} />
             </SvgLoader>
         </article>
     )
