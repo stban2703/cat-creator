@@ -1,7 +1,6 @@
 export const getColorListFromAttribute = (attribute: string) => {
     switch (attribute) {
         case "fur":
-        default:
             return [
                 '#FFFFFF',
                 '#EBEBEB',
@@ -13,6 +12,7 @@ export const getColorListFromAttribute = (attribute: string) => {
                 '#000000'
             ]
         case "eyes":
+        default:
             return [
                 '#ABB8C3',
                 '#000000',
