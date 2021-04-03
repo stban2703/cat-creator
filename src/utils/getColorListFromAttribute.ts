@@ -6,8 +6,8 @@ export const getColorListFromAttribute = (attribute: string) => {
                 '#EBEBEB',
                 '#ABB8C3',
                 '#8ED1FC',
-                '#FF6900',
-                '#FCB900',
+                '#EA9142',
+                '#D4A113',
                 '#F78DA7',
                 '#000000'
             ]
