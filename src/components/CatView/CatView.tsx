@@ -2,6 +2,7 @@ import React from 'react';
 import { CatPropsType } from '../../utils/CatPropsType';
 import { SvgLoader, SvgProxy } from "react-svgmt";
 import './CatView.css';
+import { svgSelectors } from '../../utils/svgSelectors';
 
 interface CatViewProps {
     catProps: CatPropsType;
@@ -11,11 +12,13 @@ interface CatViewProps {
 export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) => {
     const catFurProps = catProps.settings[0];
     const catEyesProps = catProps.settings[1];
-    const furOnlyStrokeSelector = "#eye-left-shadow, #eye-right-shadow, #mouth, #whisker-left-1, #whisker-left-2, #whisker-left-3, #whisker-right-1, #whisker-right-2, #whisker-right-3";
-    const furFillAndStrokeSelector = "#head, #ear-left-outside, #ear-right-outside, #body-front, #body-back, #paw-left, #paw-right, #tail";
-    const eyesFillSelector = "#eye-left-color, #eye-right-color";
+    const furOnlyStrokeSelector = svgSelectors.furOnlyStrokeSelector;
+    const furFillAndStrokeSelector = svgSelectors.furFillAndStrokeSelector;
+    const eyesFillSelector = svgSelectors.eyesFillSelector;
+    const linesPatternSelector = svgSelectors.linesPatternSelector;
 
     const handleCamera = (currentAttribute: string) => {
+        console.log(catFurProps.type === "lines")
         switch (currentAttribute) {
             default:
                 return "";
@@ -27,7 +30,7 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
                 return "CatView__model--hat"
         }
     }
-    const camera = handleCamera(currentAttribute);
+    const camera = handleCamera(currentAttribute)
 
     return (
         <article className="CatView">
@@ -35,6 +38,7 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
                 <SvgProxy selector={eyesFillSelector} fill={catEyesProps.fill} />
                 <SvgProxy selector={furOnlyStrokeSelector} fill={catFurProps.stroke} />
                 <SvgProxy selector={furFillAndStrokeSelector} fill={catFurProps.fill} stroke={catFurProps.stroke} />
+                <SvgProxy selector={linesPatternSelector} fill={ catFurProps.type === "lines" ? catFurProps.stroke : catFurProps.fill} />
             </SvgLoader>
         </article>
     )
