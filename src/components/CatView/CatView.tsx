@@ -17,6 +17,7 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
     const furFillAndStrokeSelector = svgSelectors.furFillAndStrokeSelector;
     const eyesFillSelector = svgSelectors.eyesFillSelector;
     const linesPatternSelector = svgSelectors.linesPatternSelector;
+    const colorAndWhitePatternSelector = svgSelectors.colorAndWhitePatternSelector;
     const camera = handleCamera(currentAttribute);
 
     return (
@@ -25,8 +26,9 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
                 <SvgProxy selector={eyesFillSelector} fill={catEyesProps.fill} />
                 <SvgProxy selector={furOnlyStrokeSelector} fill={catFurProps.stroke} />
                 <SvgProxy selector={furFillAndStrokeSelector} fill={catFurProps.fill} stroke={catFurProps.stroke} />
-                <SvgProxy selector={linesPatternSelector} fill={ catFurProps.type === "lines" ? catFurProps.stroke : catFurProps.fill} />
-                <SvgProxy selector={"#ear-left-linePattern, #ear-right-linePattern"} stroke={ catFurProps.type === "lines" ? "rgba(0, 0, 0, 0.1)" : catFurProps.stroke} />
+                <SvgProxy selector={linesPatternSelector} fill={catFurProps.stroke} display={catFurProps.type === "lines" ? "visible" : "none"} />
+                <SvgProxy selector={"#ear-left-linePattern, #ear-right-linePattern"} stroke={catFurProps.type === "lines" ? "rgba(0, 0, 0, 0.1)" : catFurProps.stroke} />
+                <SvgProxy selector={colorAndWhitePatternSelector} display={catFurProps.type === "colorAndWhite" ? "visible" : "none"} fill={catFurProps.fill==="#ffffff" ? "lightGray" : "#FFFFFF"} />
             </SvgLoader>
         </article>
     )

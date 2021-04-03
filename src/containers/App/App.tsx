@@ -49,11 +49,6 @@ export const App = () => {
                 elem.checked = false;
             }
         })
-
-        if (currentAttribute === "fur") {
-            console.log(catPropsCopy.settings[catSettingsIndex].type)
-        }
-
         setCatProps(catPropsCopy);
         setAttributeList(settingsOptionsCopy);
     }
@@ -68,9 +63,7 @@ export const App = () => {
 
         catSettingsCopy[catSettingsIndex].fill = colorFill;
         catSettingsCopy[catSettingsIndex].stroke = colorStroke;
-
         catPropsCopy.settings = catSettingsCopy;
-
         setCatProps(catPropsCopy);
     }
 
