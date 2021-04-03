@@ -3,6 +3,7 @@ import { CatPropsType } from '../../utils/CatPropsType';
 import { SvgLoader, SvgProxy } from "react-svgmt";
 import './CatView.css';
 import { svgSelectors } from '../../utils/svgSelectors';
+import { handleCamera } from '../../utils/handleCamera';
 
 interface CatViewProps {
     catProps: CatPropsType;
@@ -16,22 +17,7 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
     const furFillAndStrokeSelector = svgSelectors.furFillAndStrokeSelector;
     const eyesFillSelector = svgSelectors.eyesFillSelector;
     const linesPatternSelector = svgSelectors.linesPatternSelector;
-
-    const handleCamera = (currentAttribute: string) => {
-        console.log(catFurProps.type === "lines")
-        switch (currentAttribute) {
-            default:
-                return "";
-            case "eyes":
-                return "CatView__model--eyes";
-            case "necklace":
-                return "CatView__model--necklace"
-            case "hat":
-                return "CatView__model--hat"
-        }
-    }
-    const camera = handleCamera(currentAttribute)
-    //#ear-left-linePattern, #ear-right-linePattern
+    const camera = handleCamera(currentAttribute);
 
     return (
         <article className="CatView">
