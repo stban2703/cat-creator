@@ -5,19 +5,20 @@ import './CatControl.css';
 interface CatControlProps {
     catName: string;
     onEditCatName: (newName: string) => void;
+    onSaveCat: () => void;
 }
 
-export const CatControl: React.FC<CatControlProps> = ({ catName, onEditCatName }) => {
+export const CatControl: React.FC<CatControlProps> = ({ catName, onEditCatName, onSaveCat }) => {
     const handleTextChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
         onEditCatName(event.target.value);
     }
 
     return (
-        <form className="CatControl">
+        <section className="CatControl">
             <input className="CatControl__input" type="text" name="catName" value={catName} placeholder="Escribe el nombre de tu gato" onChange={handleTextChange} />
             <div className="CatControl__options">
                 <div className="CatControl__section">
-                    <button className="CatControl__btn CatControl__btn--green">
+                    <button className="CatControl__btn CatControl__btn--green" onClick={onSaveCat} >
                         Guardar
                     </button>
                     <button className="CatControl__btn CatControl__btn--default">
@@ -30,6 +31,6 @@ export const CatControl: React.FC<CatControlProps> = ({ catName, onEditCatName }
                     </Link>
                 </div>
             </div>
-        </form>
+        </section>
     )
 }

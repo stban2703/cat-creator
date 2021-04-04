@@ -13,9 +13,10 @@ interface EditPanelProps {
     onEditAttributeType: (newType: string) => void;
     onEditAttributeColor: (colorFill: string, colorStroke: string) => void;
     onChangeCurrentAttribute: (newCurrentAttribute: string) => void;
+    onSaveCat: () => void;
 }
 
-export const EditPanel: React.FC<EditPanelProps> = ({ catName, attributeOptions, currentAttribute, onEditCatName, onEditAttributeType, onEditAttributeColor, onChangeCurrentAttribute }) => {
+export const EditPanel: React.FC<EditPanelProps> = ({ catName, attributeOptions, currentAttribute, onEditCatName, onEditAttributeType, onEditAttributeColor, onChangeCurrentAttribute, onSaveCat }) => {
 
     const getItemListFromId = (newAttribute: string) => {
         const copy = attributeOptions.slice();
@@ -32,7 +33,7 @@ export const EditPanel: React.FC<EditPanelProps> = ({ catName, attributeOptions,
         <article className="EditPanel">
             <AttributeSelection attributeOptions={attributeOptions} onChangeCurrentAttribute={onChangeCurrentAttribute} />
             <AttributeOptions currentAttribute={currentAttribute} onEditAttributeType={onEditAttributeType} onEditAttributeColor={onEditAttributeColor} itemList={itemList} />
-            <CatControl catName={catName} onEditCatName={onEditCatName} />
+            <CatControl catName={catName} onEditCatName={onEditCatName} onSaveCat={onSaveCat} />
         </article>
     )
 }
