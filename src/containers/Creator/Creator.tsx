@@ -25,13 +25,7 @@ export const Creator: React.FC<CreatorProps> = ({ catList, attributeOptions, cur
         const catPropsElem = catList.find((elem) => {
             return elem.id === id;
         })
-        if(catPropsElem) {
-            return catPropsElem;
-        } else {
-            return catList.find((elem) => {
-                return elem.id === "0";
-            });
-        }
+        return catPropsElem;
     }
     const catProps = handleCatProps(id);
 

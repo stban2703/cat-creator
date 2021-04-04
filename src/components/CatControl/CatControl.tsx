@@ -16,7 +16,7 @@ export const CatControl: React.FC<CatControlProps> = ({ catName, onEditCatName, 
     }
     const intermediateSaveCat = () => {
         onSaveCat(id);
-        history.push("/cats/");
+        //history.push("/cats/");
     }
     return (
         <section className="CatControl">
@@ -31,8 +31,11 @@ export const CatControl: React.FC<CatControlProps> = ({ catName, onEditCatName, 
                     </button>
                 </div>
                 <div className="CatControl__section">
-                    <Link className="CatControl__btn CatControl__btn--navegate" to={'/'}>
+                    <Link className="CatControl__btn CatControl__btn--navegate" to={'/cats/'}>
                         Ver creados
+                    </Link>
+                    <Link className="CatControl__btn CatControl__btn--exit" to={'/'}>
+                        Salir
                     </Link>
                 </div>
             </div>

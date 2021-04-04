@@ -11,8 +11,7 @@ export const App = () => {
     //const [catProps, setCatProps] = useState(initialCatProps);
     const [catList, setCatList] = useState([{...initialCatProps}]);
     const [currentAttribute, setCurrentAttribute] = useState("fur");
-    const [attributeOptions, setAttributeList] = useState(initialAttributeOptions);
-    console.log(catList)
+    const [attributeOptions, setAttributeOptions] = useState(initialAttributeOptions.slice());
 
     const handleCatName = (id: string, newName: string) => {
         const catListCopy = [...catList];
@@ -30,7 +29,7 @@ export const App = () => {
                 e.checked = true;
             } else e.checked = false;
         })
-        setAttributeList(copy);
+        setAttributeOptions(copy);
         setCurrentAttribute(newCurrentAttribute);
     }
 
@@ -41,14 +40,12 @@ export const App = () => {
             return elem.id === id;
         })
         const catCopy = catListCopy[catIndex];
-
         // CatSettings index
         const catSettingsIndex = catCopy.settings.findIndex((elem) => {
             return elem.id === currentAttribute;
         });
         catCopy.settings[catSettingsIndex].type = newType;
         catListCopy[catIndex] = catCopy;
-
         // AttributeOptions copy and index
         const attributeOptionsCopy = attributeOptions.slice();
         const attributeOptionsIndex = attributeOptionsCopy.findIndex(elem => {
@@ -61,10 +58,9 @@ export const App = () => {
                 elem.checked = false;
             }
         })
-
         // Set hooks
         setCatList(catListCopy);
-        setAttributeList(attributeOptionsCopy);
+        setAttributeOptions(attributeOptionsCopy);
     }
 
     const handleAttributeColor = (id: string, colorFill: string, colorStroke: string) => {
@@ -95,17 +91,18 @@ export const App = () => {
             newCat.id = "" + randomId;
             newCat.creationDate = Date.now();
             catListCopy.push(newCat);
-
             // Reset default cat
             const defaultCatIndex = catListCopy.findIndex((elem) => {
-                return elem.id === "new";
+                return elem.id === id;
             })
-            catListCopy[defaultCatIndex] = initialCatProps;
-
+            catListCopy[defaultCatIndex] = {...initialCatProps};
+            setAttributeOptions([...initialAttributeOptions]);
+            setCurrentAttribute("fur");
             setCatList(catListCopy);
+            console.log("nuevo");
         } else {
-            //const catElem = {...catListCopy[catIndex]};
-            //catListCopy[catIndex] = catElem;
+            setAttributeOptions([...initialAttributeOptions]);
+            setCurrentAttribute("fur");
             setCatList(catListCopy);
         }
     }

@@ -71,5 +71,9 @@
 }
 
 .CatControl__btn--navegate {
+    background-color: rgb(28, 28, 39);
+}
+
+.CatControl__btn--exit {
     background-color: #FC4A1A;
 }
