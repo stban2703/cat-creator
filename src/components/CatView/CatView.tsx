@@ -13,15 +13,18 @@ interface CatViewProps {
 export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) => {
     const catFurProps = catProps.settings[0];
     const catEyesProps = catProps.settings[1];
-    const shadowSelector = svgSelectors.shadowSelector;
-    const furOnlyStrokeSelector = svgSelectors.furOnlyStrokeSelector;
-    const furFillAndStrokeSelector = svgSelectors.furFillAndStrokeSelector;
-    const eyesFillSelector = svgSelectors.eyesFillSelector;
-    const linesPatternSelector = svgSelectors.linesPatternSelector;
-    const colorAndWhitePatternSelector = svgSelectors.colorAndWhitePatternSelector;
-    const siamesePatternSelector = svgSelectors.siamesePatternSelector;
-    const tricolorYellowSelector = svgSelectors.tricolorPatternYellowSelector;
-    const tricolorBlackSelector = svgSelectors.tricolorPatternBlackSelector;
+    const shadowSelector = svgSelectors.shadow;
+    const furOnlyStrokeSelector = svgSelectors.furOnlyStroke;
+    const furFillAndStrokeSelector = svgSelectors.furFillAndStroke;
+    const eyesFillSelector = svgSelectors.eyesFill;
+    const linesPatternSelector = svgSelectors.linesPattern;
+    const colorAndWhitePatternSelector = svgSelectors.colorAndWhitePattern;
+    const siamesePatternSelector = svgSelectors.siamesePattern;
+    const tricolorYellowSelector = svgSelectors.tricolorPatternYellow;
+    const tricolorBlackSelector = svgSelectors.tricolorPatternBlack;
+    const pupilContractedSelector = svgSelectors.pupilContracted;
+    const pupilNormalSelector = svgSelectors.pupilNormal;
+    const pupilExpandedSelector = svgSelectors.pupilExpanded;
     const camera = handleCamera(currentAttribute);
 
     return (
@@ -41,6 +44,9 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
                 <SvgProxy selector={tricolorBlackSelector} fill={catFurProps.fill === "#000000" ? "#E9B388" : "#000000"} />
                 <SvgProxy selector={tricolorYellowSelector} fill={catFurProps.fill === "#000000" ? "#FFFFFF" : "#E9B388"} />
                 <SvgProxy selector={"#ear-left-inside, #ear-right-inside"} fill={catFurProps.type === "tricolor" ? "darkGray" : "#FFC3F9"}/>
+                <SvgProxy selector={pupilContractedSelector} display={catEyesProps.type === "contracted" ? "visible" : "none"}/>
+                <SvgProxy selector={pupilNormalSelector} display={catEyesProps.type === "normal" ? "visible" : "none"}/>
+                <SvgProxy selector={pupilExpandedSelector} display={catEyesProps.type === "expanded" ? "visible" : "none"}/>
             </SvgLoader>
         </article>
     )
