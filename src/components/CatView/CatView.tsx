@@ -20,6 +20,8 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
     const linesPatternSelector = svgSelectors.linesPatternSelector;
     const colorAndWhitePatternSelector = svgSelectors.colorAndWhitePatternSelector;
     const siamesePatternSelector = svgSelectors.siamesePatternSelector;
+    const tricolorYellowSelector = svgSelectors.tricolorPatternYellowSelector;
+    const tricolorBlackSelector = svgSelectors.tricolorPatternBlackSelector;
     const camera = handleCamera(currentAttribute);
 
     return (
@@ -35,6 +37,9 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
                 <SvgProxy selector={furOnlyStrokeSelector} fill={catFurProps.type === "siamese" ? "#000000" : catFurProps.stroke} />
                 <SvgProxy selector={"#nose, #ear-left-inside, #ear-right-inside"} fill={catFurProps.type === "siamese" ? "#000000" : "#FFC3F9"}/>
                 <SvgProxy selector={shadowSelector} fill-opacity={catFurProps.type === "siamese" ? "0.25" : "0.1"} />
+                <SvgProxy selector={tricolorYellowSelector + ", " + tricolorBlackSelector} display={catFurProps.type === "tricolor" ? "visible" : "none"} />
+                <SvgProxy selector={tricolorBlackSelector} fill={catFurProps.fill === "#000000" ? "#E9B388" : "#000000"} />
+                <SvgProxy selector={tricolorYellowSelector} fill={catFurProps.fill === "#000000" ? "#FFFFFF" : "#E9B388"} />
             </SvgLoader>
         </article>
     )
