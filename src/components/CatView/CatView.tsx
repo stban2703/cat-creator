@@ -40,6 +40,7 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
                 <SvgProxy selector={tricolorYellowSelector + ", " + tricolorBlackSelector} display={catFurProps.type === "tricolor" ? "visible" : "none"} />
                 <SvgProxy selector={tricolorBlackSelector} fill={catFurProps.fill === "#000000" ? "#E9B388" : "#000000"} />
                 <SvgProxy selector={tricolorYellowSelector} fill={catFurProps.fill === "#000000" ? "#FFFFFF" : "#E9B388"} />
+                <SvgProxy selector={"#ear-left-inside, #ear-right-inside"} fill={catFurProps.type === "tricolor" ? "darkGray" : "#FFC3F9"}/>
             </SvgLoader>
         </article>
     )
