@@ -9,11 +9,11 @@ interface EditPanelProps {
     catName: string;
     attributeOptions: AttributeOptionType[];
     currentAttribute: string;
-    onEditCatName: (newName: string) => void;
-    onEditAttributeType: (newType: string) => void;
-    onEditAttributeColor: (colorFill: string, colorStroke: string) => void;
+    onEditCatName: (id: string,newName: string) => void;
+    onEditAttributeType: (id: string,newType: string) => void;
+    onEditAttributeColor: (id: string,colorFill: string, colorStroke: string) => void;
     onChangeCurrentAttribute: (newCurrentAttribute: string) => void;
-    onSaveCat: () => void;
+    onSaveCat: (id: string,) => void;
 }
 
 export const EditPanel: React.FC<EditPanelProps> = ({ catName, attributeOptions, currentAttribute, onEditCatName, onEditAttributeType, onEditAttributeColor, onChangeCurrentAttribute, onSaveCat }) => {

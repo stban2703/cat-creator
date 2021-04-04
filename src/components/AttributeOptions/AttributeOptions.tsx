@@ -10,8 +10,8 @@ import "./AttributeOptions.css";
 interface AttributeOptionsProps {
     currentAttribute: string;
     itemList: TypeItemType[];
-    onEditAttributeType: (newType: string) => void;
-    onEditAttributeColor: (colorFill: string, colorStroke: string) => void;
+    onEditAttributeType: (id: string, newType: string) => void;
+    onEditAttributeColor: (id: string, colorFill: string, colorStroke: string) => void;
 }
 
 export const AttributeOptions: React.FC<AttributeOptionsProps> = ({ currentAttribute, itemList, onEditAttributeType, onEditAttributeColor }) => {

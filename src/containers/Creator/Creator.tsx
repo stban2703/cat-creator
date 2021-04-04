@@ -8,26 +8,38 @@ import './Creator.css';
 import { useParams } from 'react-router';
 
 interface CreatorProps {
-    catProps: CatPropsType;
-    attributeOptions: AttributeOptionType[];
+    catList: CatPropsType[];
     currentAttribute: string;
-    onEditCatName: (newName: string) => void;
-    onEditAttributeType: (newType: string) => void;
-    onEditAttributeColor: (colorFill: string, colorStroke: string) => void;
+    attributeOptions: AttributeOptionType[];
+    onEditCatName: (id: string, newName: string) => void;
+    onEditAttributeType: (id: string,newType: string) => void;
+    onEditAttributeColor: (id: string,colorFill: string, colorStroke: string) => void;
     onChangeCurrentAttribute: (newCurrentAttribute: string) => void;
-    onSaveCat: () => void;
+    onSaveCat: (id: string,) => void;
 }
 
-export const Creator: React.FC<CreatorProps> = ({ catProps, attributeOptions, currentAttribute, onEditCatName, onEditAttributeType, onEditAttributeColor, onChangeCurrentAttribute, onSaveCat }) => {
+export const Creator: React.FC<CreatorProps> = ({ catList, attributeOptions, currentAttribute, onEditCatName, onEditAttributeType, onEditAttributeColor, onChangeCurrentAttribute, onSaveCat }) => {
 
-    const { id } = useParams<{ id: string }>();
-    //console.log(id)
+    const { id } = useParams<{ id: string }>();    
+    const handleCatProps = (id: string) => {
+        const catPropsElem = catList.find((elem) => {
+            return elem.id === id;
+        })
+        if(catPropsElem) {
+            return catPropsElem;
+        } else {
+            return catList.find((elem) => {
+                return elem.id === "0";
+            });
+        }
+    }
+    const catProps = handleCatProps(id);
 
     return (
         <article className="Creator">
-            <CatView catProps={catProps} currentAttribute={currentAttribute} />
+            <CatView catProps={catProps!} currentAttribute={currentAttribute} />
             <div className="Creator__empty"></div>
-            <EditPanel catName={catProps.catName} onEditCatName={onEditCatName} attributeOptions={attributeOptions} currentAttribute={currentAttribute} onEditAttributeType={onEditAttributeType} onEditAttributeColor={onEditAttributeColor} onChangeCurrentAttribute={onChangeCurrentAttribute} onSaveCat={onSaveCat} />
+            <EditPanel catName={catProps!.catName} onEditCatName={onEditCatName} attributeOptions={attributeOptions} currentAttribute={currentAttribute} onEditAttributeType={onEditAttributeType} onEditAttributeColor={onEditAttributeColor} onChangeCurrentAttribute={onChangeCurrentAttribute} onSaveCat={onSaveCat} />
         </article>
     )
 }

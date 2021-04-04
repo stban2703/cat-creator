@@ -8,21 +8,19 @@ import { initialCatProps } from './initialCatProps';
 import { initialAttributeOptions } from './initialAttributeOptions';
 
 export const App = () => {
-    const [catProps, setCatProps] = useState(initialCatProps);
-    const [attributeOptions, setAttributeList] = useState(initialAttributeOptions);
+    //const [catProps, setCatProps] = useState(initialCatProps);
+    const [catList, setCatList] = useState([{...initialCatProps}]);
     const [currentAttribute, setCurrentAttribute] = useState("fur");
-    const [catList, setCatList] = useState([initialCatProps])
+    const [attributeOptions, setAttributeList] = useState(initialAttributeOptions);
+    console.log(catList)
 
-    const selectCat = (id: number) => {
-        catList.find((elem) => {
+    const handleCatName = (id: string, newName: string) => {
+        const catListCopy = [...catList];
+        const catIndex = catListCopy.findIndex((elem) => {
             return elem.id === id;
-        })
-    }
-
-    const handleCatName = (newName: string) => {
-        const catPropsCopy = { ...catProps };
-        catPropsCopy.catName = newName;
-        setCatProps(catPropsCopy);
+        });
+        catListCopy[catIndex].catName = newName;
+        setCatList(catListCopy);
     }
 
     const handleCurrentAttribute = (newCurrentAttribute: string) => {
@@ -36,54 +34,80 @@ export const App = () => {
         setCurrentAttribute(newCurrentAttribute);
     }
 
-    const handleAttributeType = (newType: string) => {
-        const catPropsCopy = { ...catProps };
-        const catSettingsIndex = catPropsCopy.settings.findIndex((elem) => {
+    const handleAttributeType = (id: string, newType: string) => {
+        // CatList copy and cat index
+        const catListCopy = [...catList];
+        const catIndex = catListCopy.findIndex((elem) => {
+            return elem.id === id;
+        })
+        const catCopy = catListCopy[catIndex];
+
+        // CatSettings index
+        const catSettingsIndex = catCopy.settings.findIndex((elem) => {
             return elem.id === currentAttribute;
         });
-        catPropsCopy.settings[catSettingsIndex].type = newType;
-        const settingsOptionsCopy = attributeOptions.slice();
-        const settingsOptionsIndex = settingsOptionsCopy.findIndex(elem => {
+        catCopy.settings[catSettingsIndex].type = newType;
+        catListCopy[catIndex] = catCopy;
+
+        // AttributeOptions copy and index
+        const attributeOptionsCopy = attributeOptions.slice();
+        const attributeOptionsIndex = attributeOptionsCopy.findIndex(elem => {
             return elem.id === currentAttribute;
         })
-        settingsOptionsCopy[settingsOptionsIndex].itemList.forEach(elem => {
-            if (elem.value === catPropsCopy.settings[catSettingsIndex].type) {
+        attributeOptionsCopy[attributeOptionsIndex].itemList.forEach(elem => {
+            if (elem.value === catCopy.settings[catSettingsIndex].type) {
                 elem.checked = true;
             } else {
                 elem.checked = false;
             }
         })
-        setCatProps(catPropsCopy);
-        setAttributeList(settingsOptionsCopy);
+
+        // Set hooks
+        setCatList(catListCopy);
+        setAttributeList(attributeOptionsCopy);
     }
 
-    const handleAttributeColor = (colorFill: string, colorStroke: string) => {
-        const catPropsCopy = { ...catProps };
-        const catSettingsCopy = catPropsCopy.settings;
-
+    const handleAttributeColor = (id: string, colorFill: string, colorStroke: string) => {
+        const catListCopy = [...catList];
+        const catIndex = catListCopy.findIndex((elem) => {
+            return elem.id === id;
+        })
+        const catCopy = catListCopy[catIndex];
+        const catSettingsCopy = catCopy.settings;
         const catSettingsIndex = catSettingsCopy.findIndex((elem) => {
             return elem.id === currentAttribute;
         });
         catSettingsCopy[catSettingsIndex].fill = colorFill;
         catSettingsCopy[catSettingsIndex].stroke = colorStroke;
-        catPropsCopy.settings = catSettingsCopy;
-        setCatProps(catPropsCopy);
+        catCopy.settings = catSettingsCopy;
+        catListCopy[catIndex] = catCopy;
+        setCatList(catListCopy);
     }
 
-    const handleSaveCat = () => {
+    const handleSaveCat = (id: string) => {
         const catListCopy = [...catList];
-        const newCat = catProps;
-        const randomId = Math.round(Math.random() * (10000000000 - 1));
-        newCat.id = randomId;
-        newCat.creationDate = Date.now();
-        if (catListCopy[0].id !== 0) {
+        const catIndex = catListCopy.findIndex((elem) => {
+            return elem.id === id;
+        })        
+        if (id === "new") {
+            const newCat = {...catListCopy[catIndex]};
+            const randomId = Math.round(Math.random() * (10000000000 - 1));
+            newCat.id = "" + randomId;
+            newCat.creationDate = Date.now();
             catListCopy.push(newCat);
+
+            // Reset default cat
+            const defaultCatIndex = catListCopy.findIndex((elem) => {
+                return elem.id === "new";
+            })
+            catListCopy[defaultCatIndex] = initialCatProps;
+
             setCatList(catListCopy);
         } else {
-            catListCopy[0] = newCat;
+            //const catElem = {...catListCopy[catIndex]};
+            //catListCopy[catIndex] = catElem;
             setCatList(catListCopy);
         }
-        setCatList(catListCopy);
     }
 
     return (
@@ -91,8 +115,11 @@ export const App = () => {
             <HashRouter basename={process.env.PUBLIC_URL}>
                 <Route path="/" exact render={() => <Intro />} />
                 <Route path="/create/:id" render={() =>
-                    <Creator catProps={catProps} attributeOptions={attributeOptions} currentAttribute={currentAttribute} onEditCatName={handleCatName} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor} onChangeCurrentAttribute={handleCurrentAttribute} onSaveCat={handleSaveCat} />}
+                    <Creator catList={catList} currentAttribute={currentAttribute} attributeOptions={attributeOptions} onEditCatName={handleCatName} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor} onChangeCurrentAttribute={handleCurrentAttribute} onSaveCat={handleSaveCat} />}
                 />
+                <Route path="/cats/" render={() => <div>
+                    Guardado
+                </div>} />
             </HashRouter>
         </main>
     );

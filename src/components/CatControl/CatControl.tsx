@@ -1,24 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import './CatControl.css';
 
 interface CatControlProps {
     catName: string;
-    onEditCatName: (newName: string) => void;
-    onSaveCat: () => void;
+    onEditCatName: (id: string, newName: string) => void;
+    onSaveCat: (id: string) => void;
 }
 
 export const CatControl: React.FC<CatControlProps> = ({ catName, onEditCatName, onSaveCat }) => {
+    const { id } = useParams<{ id: string }>();
+    const history = useHistory();
     const handleTextChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
-        onEditCatName(event.target.value);
+        onEditCatName(id, event.target.value);
     }
-
+    const intermediateSaveCat = () => {
+        onSaveCat(id);
+        history.push("/cats/");
+    }
     return (
         <section className="CatControl">
             <input className="CatControl__input" type="text" name="catName" value={catName} placeholder="Escribe el nombre de tu gato" onChange={handleTextChange} />
             <div className="CatControl__options">
                 <div className="CatControl__section">
-                    <button className="CatControl__btn CatControl__btn--green" onClick={onSaveCat} >
+                    <button className="CatControl__btn CatControl__btn--green" onClick={intermediateSaveCat} >
                         Guardar
                     </button>
                     <button className="CatControl__btn CatControl__btn--default">

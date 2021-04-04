@@ -1,7 +1,7 @@
 import { CatAttributeType } from "./CatAttributeType";
 
 export type CatPropsType = {
-    id: number,
+    id: string,
     catName: string,
     creationDate: number,
     settings: CatAttributeType[];
