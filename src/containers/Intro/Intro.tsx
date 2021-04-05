@@ -13,7 +13,7 @@ export const Intro: React.FC<IntroProps> = () => {
                 <h1 className="Intro__title" >Cat creator</h1>
                 <section className="Intro__controls">
                     <Link className="Intro__btn" to={`/create/new`}>Crear un gato</Link>
-                    <Link className="Intro__btn Intro__btn--gray" to={`/cats`}>Ver creados</Link>
+                    <Link className="Intro__btn Intro__btn--gray" to={`/cats/`}>Ver creados</Link>
                 </section>
             </section>
         </article>

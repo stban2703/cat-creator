@@ -16,7 +16,7 @@ export const CatControl: React.FC<CatControlProps> = ({ catName, onEditCatName, 
     }
     const intermediateSaveCat = () => {
         onSaveCat(id);
-        //history.push("/cats/");
+        history.push("/cats/");
     }
     return (
         <section className="CatControl">

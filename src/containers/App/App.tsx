@@ -6,10 +6,11 @@ import { Intro } from '../Intro/Intro';
 import './App.css';
 import { initialCatProps } from './initialCatProps';
 import { initialAttributeOptions } from './initialAttributeOptions';
+import { CreatedCats } from '../CreatedCats/CreatedCats';
+import { CatPropsType } from '../../utils/CatPropsType';
 
 export const App = () => {
-    //const [catProps, setCatProps] = useState(initialCatProps);
-    const [catList, setCatList] = useState([{...initialCatProps}]);
+    const [catList, setCatList] = useState<CatPropsType[]>([]);
     const [currentAttribute, setCurrentAttribute] = useState("fur");
     const [attributeOptions, setAttributeOptions] = useState(initialAttributeOptions.slice());
 
@@ -96,6 +97,7 @@ export const App = () => {
                 return elem.id === id;
             })
             catListCopy[defaultCatIndex] = {...initialCatProps};
+            catListCopy[defaultCatIndex].settings = [...initialCatProps.settings]
             setAttributeOptions([...initialAttributeOptions]);
             setCurrentAttribute("fur");
             setCatList(catListCopy);
@@ -114,9 +116,7 @@ export const App = () => {
                 <Route path="/create/:id" render={() =>
                     <Creator catList={catList} currentAttribute={currentAttribute} attributeOptions={attributeOptions} onEditCatName={handleCatName} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor} onChangeCurrentAttribute={handleCurrentAttribute} onSaveCat={handleSaveCat} />}
                 />
-                <Route path="/cats/" render={() => <div>
-                    Guardado
-                </div>} />
+                <Route path="/cats/" render={() => <CreatedCats catList={catList} />} />
             </HashRouter>
         </main>
     );
