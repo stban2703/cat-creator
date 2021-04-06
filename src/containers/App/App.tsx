@@ -10,7 +10,8 @@ import { CreatedCats } from '../CreatedCats/CreatedCats';
 import { CatPropsType } from '../../utils/CatPropsType';
 
 export const App = () => {
-    const [catList, setCatList] = useState<CatPropsType[]>([]);
+    //useState<CatPropsType[]>
+    const [catList, setCatList] = useState([{...initialCatProps}]);
     const [currentAttribute, setCurrentAttribute] = useState("fur");
     const [attributeOptions, setAttributeOptions] = useState(initialAttributeOptions.slice());
 
