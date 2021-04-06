@@ -4,19 +4,20 @@ import { AttributeSelection } from '../AttributeSelection/AttributeSelection';
 import { AttributeOptions } from '../AttributeOptions/AttributeOptions';
 import './EditPanel.css';
 import { CatControl } from '../CatControl/CatControl';
+import { CatPropsType } from '../../utils/CatPropsType';
 
 interface EditPanelProps {
-    catName: string;
+    catProps: CatPropsType;
     attributeOptions: AttributeOptionType[];
     currentAttribute: string;
-    onEditCatName: (id: string,newName: string) => void;
-    onEditAttributeType: (id: string,newType: string) => void;
-    onEditAttributeColor: (id: string,colorFill: string, colorStroke: string) => void;
+    onEditCatName: (newName: string) => void;
+    onEditAttributeType: (newType: string) => void;
+    onEditAttributeColor: (colorFill: string, colorStroke: string) => void;
     onChangeCurrentAttribute: (newCurrentAttribute: string) => void;
-    onSaveCat: (id: string,) => void;
+    onSaveCat: (id: string, elem: CatPropsType) => void;
 }
 
-export const EditPanel: React.FC<EditPanelProps> = ({ catName, attributeOptions, currentAttribute, onEditCatName, onEditAttributeType, onEditAttributeColor, onChangeCurrentAttribute, onSaveCat }) => {
+export const EditPanel: React.FC<EditPanelProps> = ({ catProps, attributeOptions, currentAttribute, onEditCatName, onEditAttributeType, onEditAttributeColor, onChangeCurrentAttribute, onSaveCat }) => {
 
     const getItemListFromId = (newAttribute: string) => {
         const copy = attributeOptions.slice();
@@ -33,7 +34,7 @@ export const EditPanel: React.FC<EditPanelProps> = ({ catName, attributeOptions,
         <article className="EditPanel">
             <AttributeSelection attributeOptions={attributeOptions} onChangeCurrentAttribute={onChangeCurrentAttribute} />
             <AttributeOptions currentAttribute={currentAttribute} onEditAttributeType={onEditAttributeType} onEditAttributeColor={onEditAttributeColor} itemList={itemList} />
-            <CatControl catName={catName} onEditCatName={onEditCatName} onSaveCat={onSaveCat} />
+            <CatControl catProps={catProps} onEditCatName={onEditCatName} onSaveCat={onSaveCat} />
         </article>
     )
 }
