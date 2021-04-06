@@ -22,12 +22,12 @@ export const Creator: React.FC<CreatorProps> = ({ catList, onSaveCat }) => {
         if (catPropsElem) {
             return catPropsElem;
         } else return { ...initialCatProps };
-
     }
 
     const [catProps, setCatProps] = useState(handleCatProps(id));
     const [currentAttribute, setCurrentAttribute] = useState("fur");
     const [attributeOptions, setAttributeOptions] = useState(initialAttributeOptions.slice());
+    console.log(catList)
 
     const handleCatName = (newName: string) => {
         const catCopy = { ...catProps! }

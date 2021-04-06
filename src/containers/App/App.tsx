@@ -17,7 +17,7 @@ export const App = () => {
             return elem.id === id;
         })
 
-        if(catIndex) {
+        if(catListCopy[catIndex]) {
             catListCopy[catIndex] = elem;
             setCatList(catListCopy)
         } else {
