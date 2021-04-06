@@ -11,13 +11,13 @@ export const CreatedCats: React.FC<CreatedCatsProps> = ({ catList }) => {
     return (
         <article className="CreatedCats" >
             <h2 className="CreatedCats__title">Gatos creados</h2>
-            <section className="CreatedCats__container">
+            <li className="CreatedCats__container">
                 {catList.map(({ id, catName }) => {
-                    return <Link to={`/create/${id}`} >
-                        <CatItem key={id} id={id} catName={catName} />
+                    return <Link to={`/create/${id}`} key={id} >
+                        <CatItem id={id} catName={catName} />
                     </Link>
                 })}
-            </section>
+            </li>
         </article>
     )
 }

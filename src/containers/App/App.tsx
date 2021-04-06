@@ -7,7 +7,7 @@ import './App.css';
 import { initialCatProps } from './initialCatProps';
 import { initialAttributeOptions } from './initialAttributeOptions';
 import { CreatedCats } from '../CreatedCats/CreatedCats';
-import { CatPropsType } from '../../utils/CatPropsType';
+//import { CatPropsType } from '../../utils/CatPropsType';
 
 export const App = () => {
     //useState<CatPropsType[]>
