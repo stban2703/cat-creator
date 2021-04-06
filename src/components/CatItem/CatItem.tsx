@@ -8,9 +8,9 @@ interface CatItemProps {
 
 export const CatItem: React.FC<CatItemProps> = ({ id, catName }) => {
     return (
-        <ul>
+        <li>
             <h3>{id}</h3>
             <p>{catName}</p>
-        </ul>
+        </li>
     )
 }

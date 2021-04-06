@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CatView } from '../../components/CatView/CatView';
 import { EditPanel } from '../../components/EditPanel/EditPanel';
 import { CatPropsType } from '../../utils/CatPropsType';
@@ -6,6 +6,7 @@ import './Creator.css';
 import { useParams } from 'react-router';
 import { initialCatProps } from '../App/initialCatProps';
 import { initialAttributeOptions } from '../App/initialAttributeOptions';
+import { AttributeOptionType } from '../../utils/AttributeOptionType';
 
 interface CreatorProps {
     catList: CatPropsType[];
@@ -14,19 +15,27 @@ interface CreatorProps {
 
 export const Creator: React.FC<CreatorProps> = ({ catList, onSaveCat }) => {
     const { id } = useParams<{ id: string }>();
-    const handleCatProps = (id: string) => {
+    const [catProps, setCatProps] = useState(initialCatProps);
+    const [currentAttribute, setCurrentAttribute] = useState("fur");
+    const [attributeOptions, setAttributeOptions] = useState<AttributeOptionType[]>(initialAttributeOptions);
+
+    useEffect(() => {
         const catPropsElem = catList.find((elem) => {
             return elem.id === id;
-        })
-
+        });
         if (catPropsElem) {
-            return catPropsElem;
-        } else return { ...initialCatProps };
-    }
+            setCatProps(catPropsElem);
+            console.log(catPropsElem)
+        } else {
+            setCatProps(JSON.parse(JSON.stringify(initialCatProps)));
+            console.log(initialCatProps)
+        }
+        setCurrentAttribute("fur");
+        setAttributeOptions(JSON.parse(JSON.stringify(initialAttributeOptions)));
+        console.log(id)
+    }, [id, catList]);
 
-    const [catProps, setCatProps] = useState(handleCatProps(id));
-    const [currentAttribute, setCurrentAttribute] = useState("fur");
-    const [attributeOptions, setAttributeOptions] = useState(initialAttributeOptions.slice());
+
     console.log(catList)
 
     const handleCatName = (newName: string) => {
@@ -88,11 +97,17 @@ export const Creator: React.FC<CreatorProps> = ({ catList, onSaveCat }) => {
         setCatProps(catCopy);
     }
 
+    const handleResetEditor = () => {
+        setCatProps(Object.assign({}, initialCatProps))
+        setCurrentAttribute("fur");
+        setAttributeOptions(Object.assign([], initialAttributeOptions));
+    }
+
     return (
         <article className="Creator">
             <CatView catProps={catProps!} currentAttribute={currentAttribute} />
             <div className="Creator__empty"></div>
-            <EditPanel catProps={catProps!} onEditCatName={handleCatName} attributeOptions={attributeOptions} currentAttribute={currentAttribute} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor} onChangeCurrentAttribute={handleCurrentAttribute} onSaveCat={onSaveCat} />
+            <EditPanel catProps={catProps!} onEditCatName={handleCatName} attributeOptions={attributeOptions} currentAttribute={currentAttribute} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor} onChangeCurrentAttribute={handleCurrentAttribute} onSaveCat={onSaveCat} onResetEditor={handleResetEditor} />
         </article>
     )
 }

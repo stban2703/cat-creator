@@ -13,14 +13,16 @@ export const App = () => {
 
     const handleSaveCat = (id: string, elem: CatPropsType) => {
         const catListCopy = [...catList];
-        const catIndex = catListCopy.findIndex((elem) => {
-            return elem.id === id;
+        const catIndex = catListCopy.findIndex((e) => {
+            return e.id === id;
         })
 
         if(catListCopy[catIndex]) {
+            console.log("Ya existe")
             catListCopy[catIndex] = elem;
             setCatList(catListCopy)
         } else {
+            console.log("No existe")
             const newCat = elem;
             newCat.id = Math.round(Math.random() * (10000000000 - 1)).toString();
             newCat.creationDate = Date.now();
