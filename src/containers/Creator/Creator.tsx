@@ -36,7 +36,7 @@ export const Creator: React.FC<CreatorProps> = ({ catList, onSaveCat }) => {
     }, [id, catList]);
 
 
-    console.log(catList)
+    //console.log(catList)
 
     const handleCatName = (newName: string) => {
         const catCopy = { ...catProps! }
