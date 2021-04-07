@@ -7,17 +7,15 @@ interface CatControlProps {
     catProps: CatPropsType;
     onEditCatName: (newName: string) => void;
     onSaveCat: (id: string, elem: CatPropsType) => void;
-    onResetEditor: () => void;
 }
 
-export const CatControl: React.FC<CatControlProps> = ({ catProps, onEditCatName, onSaveCat, onResetEditor }) => {
+export const CatControl: React.FC<CatControlProps> = ({ catProps, onEditCatName, onSaveCat }) => {
     const { id } = useParams<{ id: string }>();
     const history = useHistory();
     const handleTextChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
         onEditCatName(event.target.value);
     }
     const intermediateSaveCat = () => {
-        //onResetEditor();
         onSaveCat(id, catProps);
         history.push("/cats/");
     }
