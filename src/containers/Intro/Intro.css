@@ -43,7 +43,8 @@
     color: white;
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
-    margin: 10px 0;
+    margin: 10px 2px;
+    text-align: center;
 }
 
 .Intro__btn--gray {

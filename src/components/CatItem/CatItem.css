@@ -3,15 +3,17 @@
 .CatItem {
     display: flex;
     flex-direction: row;
+    align-items: center;
     width: 100%;
+    max-width: 500px;
     list-style-type: none;
-    padding: 0;
     margin: 10px 0;
     background-color: teal;
 }
 
 .CatItem__preview {
-    width: 100px;
+    width: 200px;
+
 }
 
 .CatItem__info {

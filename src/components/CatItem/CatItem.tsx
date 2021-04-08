@@ -12,7 +12,7 @@ export const CatItem: React.FC<CatItemProps> = ({ catProps }) => {
     return (
         <li className="CatItem">
             <div className="CatItem__preview">
-               
+              
             </div>
             <div className="CatItem__info">
                 <h3>{catProps.catName}</h3>
