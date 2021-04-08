@@ -7,6 +7,7 @@
     list-style-type: none;
     padding: 0;
     margin: 10px 0;
+    background-color: teal;
 }
 
 .CatItem__preview {
@@ -19,4 +20,12 @@
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
     color: white;
+}
+
+.CatItem__info h3 {
+    margin: 5px 0;
+}
+
+.CatItem__info p {
+    margin: 5px 0;
 }

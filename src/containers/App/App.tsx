@@ -18,11 +18,11 @@ export const App = () => {
         })
 
         if(catListCopy[catIndex]) {
-            console.log("Ya existe")
+            //console.log("Ya existe")
             catListCopy[catIndex] = elem;
             setCatList(catListCopy)
         } else {
-            console.log("No existe")
+            //console.log("No existe")
             const newCat = elem;
             newCat.id = Math.round(Math.random() * (10000000000 - 1)).toString();
             newCat.creationDate = Date.now();

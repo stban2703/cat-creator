@@ -15,8 +15,8 @@ export const CatItem: React.FC<CatItemProps> = ({ catProps }) => {
                
             </div>
             <div className="CatItem__info">
-                <h3>{catProps.id}</h3>
-                <p>{catProps.catName}</p>
+                <h3>{catProps.catName}</h3>
+                <p>{catProps.id}</p>
             </div>
         </li>
     )
