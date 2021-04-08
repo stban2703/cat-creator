@@ -12,6 +12,7 @@ export const CreatedCats: React.FC<CreatedCatsProps> = ({ catList }) => {
     return (
         <article className="CreatedCats" >
             <h2 className="CreatedCats__title">Gatos creados</h2>
+            <Link className="CreatedCats__newBtn" to={`/create/new`}>Crear otro</Link>
             <ul className="CreatedCats__container">
                 {catList.map((elem) => {
                     return <Link to={`/create/${elem.id}`} key={elem.id} >
@@ -19,7 +20,6 @@ export const CreatedCats: React.FC<CreatedCatsProps> = ({ catList }) => {
                     </Link>
                 })}
             </ul>
-            <Link className="CreatedCats__newBtn" to={`/create/new`}>Crear otro</Link>
         </article>
     )
 }
