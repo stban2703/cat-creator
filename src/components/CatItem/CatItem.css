@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.CatItem {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.CatItem__preview {
+    width: 100px;
+}
+
+.CatItem__info {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
