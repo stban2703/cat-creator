@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link, useHistory, useParams } from 'react-router-dom';
+import { AttributeOptionType } from '../../utils/AttributeOptionType';
 import { CatPropsType } from '../../utils/CatPropsType';
 import './CatControl.css';
 
 interface CatControlProps {
     catProps: CatPropsType;
+    attributeOptions: AttributeOptionType[];
     onEditCatName: (newName: string) => void;
     onSaveCat: (id: string, elem: CatPropsType) => void;
 }
@@ -26,9 +28,6 @@ export const CatControl: React.FC<CatControlProps> = ({ catProps, onEditCatName,
                 <div className="CatControl__section">
                     <button className="CatControl__btn CatControl__btn--green" onClick={intermediateSaveCat} >
                         Guardar
-                    </button>
-                    <button className="CatControl__btn CatControl__btn--default">
-                        Por defecto
                     </button>
                 </div>
                 <div className="CatControl__section">
