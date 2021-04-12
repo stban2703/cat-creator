@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { CatView } from '../../components/CatView/CatView';
 import { EditPanel } from '../../components/EditPanel/EditPanel';
 import { CatPropsType } from '../../utils/CatPropsType';
 import './Creator.css';
@@ -7,6 +6,7 @@ import { useParams } from 'react-router';
 import { initialCatProps } from '../App/initialCatProps';
 import { initialAttributeOptions } from '../App/initialAttributeOptions';
 import { AttributeOptionType } from '../../utils/AttributeOptionType';
+import { EditView } from '../../components/EditView/EditView';
 
 interface CreatorProps {
     catList: CatPropsType[];
@@ -95,7 +95,7 @@ export const Creator: React.FC<CreatorProps> = ({ catList, onSaveCat }) => {
 
     return (
         <article className="Creator">
-            <CatView catProps={catProps!} currentAttribute={currentAttribute} />
+            <EditView catProps={catProps!} currentAttribute={currentAttribute} />
             <EditPanel catProps={catProps!} onEditCatName={handleCatName} attributeOptions={attributeOptions} currentAttribute={currentAttribute} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor} onChangeCurrentAttribute={handleCurrentAttribute} onSaveCat={onSaveCat} />
         </article>
     )

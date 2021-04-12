@@ -3,10 +3,10 @@ export const handleCamera = (currentAttribute: string) => {
         default:
             return "";
         case "eyes":
-            return "CatView__model--eyes";
+            return "CatView--eyes";
         case "necklace":
-            return "CatView__model--necklace"
+            return "CatView--necklace"
         case "hat":
-            return "CatView__model--hat"
+            return "CatView--hat"
     }
 }
