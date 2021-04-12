@@ -15,9 +15,7 @@ export const CreatedCats: React.FC<CreatedCatsProps> = ({ catList }) => {
             <Link className="CreatedCats__newBtn" to={`/create/new`}>Crear otro</Link>
             <ul className="CreatedCats__container">
                 {catList.map((elem) => {
-                    return <Link to={`/create/${elem.id}`} key={elem.id} >
-                        <CatItem catProps={elem} />
-                    </Link>
+                    return <CatItem key={elem.id} catProps={elem} /> 
                 })}
             </ul>
         </article>
