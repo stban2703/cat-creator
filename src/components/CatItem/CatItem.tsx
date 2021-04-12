@@ -13,11 +13,13 @@ export const CatItem: React.FC<CatItemProps> = ({ catProps }) => {
     return (
         <Link to={`/create/${catProps.id}`} className="CatItem">
             <div className="CatItem__preview">
-            <CatView catProps={catProps} currentAttribute={"fur"} />
+                <CatView catProps={catProps} currentAttribute={"fur"} />
             </div>
             <div className="CatItem__info">
                 <h3>Nombre: {catProps.catName}</h3>
-                <p>Id: {catProps.id}</p>
+                <p><strong>Id:</strong> {catProps.id}</p>
+                <p><strong>Fecha:</strong> {new Date(catProps.creationDate).toLocaleDateString("es-ES")}</p>
+                <p><strong>Hora:</strong> {new Date(catProps.creationDate).toLocaleTimeString("es-ES")}</p>
             </div>
         </Link>
     )

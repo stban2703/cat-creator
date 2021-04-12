@@ -15,7 +15,7 @@
 
 .CreatedCats__container {
     list-style-type: none;
-    padding: 0;
+    padding: 0 10px;
     margin: 10px 0;
 }
 
@@ -34,4 +34,3 @@
     background-color: #4ABCAD;
     max-width: 300px;
 }
-  
