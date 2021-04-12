@@ -17,7 +17,7 @@ export const CatItem: React.FC<CatItemProps> = ({ catProps, onDeleteCat }) => {
                 <CatView catProps={catProps} currentAttribute={"fur"} />
             </div>
             <div className="CatItem__info">
-                <h3>Nombre: {catProps.catName}</h3>
+                <h3>{catProps.catName}</h3>
                 <p><strong>Id:</strong> {catProps.id}</p>
                 <p><strong>Fecha:</strong> {new Date(catProps.creationDate).toLocaleDateString("es-ES")}</p>
                 <p><strong>Hora:</strong> {new Date(catProps.creationDate).toLocaleTimeString("es-ES")}</p>

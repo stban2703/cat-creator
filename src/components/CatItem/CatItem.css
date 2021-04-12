@@ -32,11 +32,13 @@
 }
 
 .CatItem__info h3 {
-    margin: 5px 0;
+    margin: 3px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .CatItem__info p {
-    margin: 5px 0;
+    margin: 3px 0;
 }
 
 .CatItem__control {
