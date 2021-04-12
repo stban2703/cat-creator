@@ -3,9 +3,10 @@ import { Route } from 'react-router';
 import { HashRouter } from 'react-router-dom';
 import { Creator } from '../Creator/Creator';
 import { Intro } from '../Intro/Intro';
-import './App.css';
 import { CreatedCats } from '../CreatedCats/CreatedCats';
 import { CatPropsType } from '../../utils/CatPropsType';
+import "./reset.css";
+import './App.css';
 
 export const App = () => {
     //useState<CatPropsType[]>
