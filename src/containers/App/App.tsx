@@ -31,6 +31,15 @@ export const App = () => {
         }
     }
 
+    const handleDeleteCat = (id: string) => {
+        const catListCopy = catList.slice();
+        const catIndex = catList.findIndex((elem) => {
+            return elem.id === id;
+        })
+        catListCopy.splice(catIndex, 1);
+        setCatList(catListCopy);
+    }
+
     return (
         <main className="App">
             <HashRouter basename={process.env.PUBLIC_URL}>
@@ -38,7 +47,7 @@ export const App = () => {
                 <Route path="/create/:id" render={() =>
                     <Creator catList={catList} onSaveCat={handleSaveCat} />}
                 />
-                <Route path="/cats/" render={() => <CreatedCats catList={catList} />} />
+                <Route path="/cats/" render={() => <CreatedCats catList={catList} onDeleteCat={handleDeleteCat} /> } />
             </HashRouter>
         </main>
     );

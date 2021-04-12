@@ -7,9 +7,10 @@ import { Link } from 'react-router-dom';
 
 interface CatItemProps {
     catProps: CatPropsType;
+    onDeleteCat: () => void;
 }
 
-export const CatItem: React.FC<CatItemProps> = ({ catProps }) => {
+export const CatItem: React.FC<CatItemProps> = ({ catProps, onDeleteCat }) => {
     return (
         <div className="CatItem">
             <div className="CatItem__preview">
@@ -25,7 +26,7 @@ export const CatItem: React.FC<CatItemProps> = ({ catProps }) => {
                 <Link to={`/create/${catProps.id}`} className="CatItem__btn CatItem__btn--edit">
                     Editar
                 </Link>
-                <button className="CatItem__btn CatItem__btn--delete">
+                <button className="CatItem__btn CatItem__btn--delete" onClick={onDeleteCat} >
                     Eliminar
                 </button>
             </div>

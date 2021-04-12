@@ -9,7 +9,7 @@
     height: 200px;
     width: 95%;
     list-style-type: none;
-    margin-top: 10px 10px;
+    margin-top: 10px;
     background-color: teal;
     text-decoration: none;
     border-radius: 25px;
@@ -60,6 +60,10 @@
     outline: none;
     text-align: center;
     background-color: white;
+}
+
+.CatItem__btn:hover {
+    cursor: pointer;
 }
 
 .CatItem__btn--delete {
