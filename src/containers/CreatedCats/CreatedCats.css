@@ -15,10 +15,12 @@
 }
 
 .CreatedCats__container {
-    width: 100%;
+    width: 98%;
     list-style-type: none;
-    padding: 0 10px;
     margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .CreatedCats__newBtn {

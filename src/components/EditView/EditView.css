@@ -1,5 +1,6 @@
 .EditView {
     width: 100%;
+    max-width: none;
     display: flex;
     flex-direction: column;
     align-items: center;

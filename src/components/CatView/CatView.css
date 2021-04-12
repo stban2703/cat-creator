@@ -3,6 +3,7 @@
 .CatView {
     transition: all .5s ease;
     width: 100%;
+    max-width: none;
     height: 90%;
 }
 

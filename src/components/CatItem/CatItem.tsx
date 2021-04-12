@@ -11,7 +11,7 @@ interface CatItemProps {
 
 export const CatItem: React.FC<CatItemProps> = ({ catProps }) => {
     return (
-        <li className="CatItem">
+        <div className="CatItem">
             <div className="CatItem__preview">
                 <CatView catProps={catProps} currentAttribute={"fur"} />
             </div>
@@ -29,6 +29,6 @@ export const CatItem: React.FC<CatItemProps> = ({ catProps }) => {
                     Eliminar
                 </button>
             </div>
-        </li>
+        </div>
     )
 }
