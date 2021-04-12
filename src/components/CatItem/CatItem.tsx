@@ -11,7 +11,7 @@ interface CatItemProps {
 
 export const CatItem: React.FC<CatItemProps> = ({ catProps }) => {
     return (
-        <Link to={`/create/${catProps.id}`} className="CatItem">
+        <li className="CatItem">
             <div className="CatItem__preview">
                 <CatView catProps={catProps} currentAttribute={"fur"} />
             </div>
@@ -21,6 +21,14 @@ export const CatItem: React.FC<CatItemProps> = ({ catProps }) => {
                 <p><strong>Fecha:</strong> {new Date(catProps.creationDate).toLocaleDateString("es-ES")}</p>
                 <p><strong>Hora:</strong> {new Date(catProps.creationDate).toLocaleTimeString("es-ES")}</p>
             </div>
-        </Link>
+            <div className="CatItem__control">
+                <Link to={`/create/${catProps.id}`} className="CatItem__btn CatItem__btn--edit">
+                    Editar
+                </Link>
+                <button className="CatItem__btn CatItem__btn--delete">
+                    Eliminar
+                </button>
+            </div>
+        </li>
     )
 }

@@ -37,3 +37,29 @@
 .CatItem__info p {
     margin: 5px 0;
 }
+
+.CatItem__control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.CatItem__btn {
+    width: 150px;
+    padding: 8px 0px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: inherit;
+    color: #4ABCAD;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.125rem;
+    margin: 0 5px;
+    outline: none;
+    text-align: center;
+    background-color: white;
+}
+
+.CatItem__btn--delete {
+    background-color: #FC4A1A;
+    color: white;
+}
