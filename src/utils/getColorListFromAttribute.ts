@@ -24,5 +24,17 @@ export const getColorListFromAttribute = (attribute: string) => {
                 '#F78DA7',
                 '#9900EF'
             ]
+        case "necklace":
+            return [
+                '#ABB8C3',
+                '#000000',
+                '#67D26B',
+                '#61ACF2',
+                '#FF6900',
+                '#FCB900',
+                '#EB144C',
+                '#F78DA7',
+                '#9900EF'
+            ]
     }
 }

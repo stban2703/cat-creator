@@ -18,6 +18,7 @@
 .CatItem__preview {
     width: 200px;
     height: 100%;
+    max-width: none;
     display: flex;
     align-items: center;
     margin-right: 10px;

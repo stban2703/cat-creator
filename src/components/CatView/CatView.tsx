@@ -13,6 +13,7 @@ interface CatViewProps {
 export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) => {
     const catFurProps = catProps.settings[0];
     const catEyesProps = catProps.settings[1];
+    const catNecklaceProps = catProps.settings[2];
     const shadowSelector = svgSelectors.shadow;
     const furOnlyStrokeSelector = svgSelectors.furOnlyStroke;
     const furFillAndStrokeSelector = svgSelectors.furFillAndStroke;
@@ -25,6 +26,11 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
     const pupilContractedSelector = svgSelectors.pupilContracted;
     const pupilNormalSelector = svgSelectors.pupilNormal;
     const pupilExpandedSelector = svgSelectors.pupilExpanded;
+    const baseNecklaceSelector = svgSelectors.baseNecklace;
+    const roundNecklaceSelector = svgSelectors.roundNecklace;
+    const heartNecklaceSelector = svgSelectors.heartNecklace;
+    const ribbonNecklaceSelector = svgSelectors.ribbonNecklace;
+    const necklaceTextSelector = svgSelectors.necklaceText;
     const camera = handleCamera(currentAttribute);
 
     return (
@@ -46,6 +52,11 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
             <SvgProxy selector={pupilContractedSelector} display={catEyesProps.type === "contracted" ? "visible" : "none"} />
             <SvgProxy selector={pupilNormalSelector} display={catEyesProps.type === "normal" ? "visible" : "none"} />
             <SvgProxy selector={pupilExpandedSelector} display={catEyesProps.type === "expanded" ? "visible" : "none"} />
+            <SvgProxy selector={baseNecklaceSelector} display={catNecklaceProps.type !== "blank" ? "visible" : "none"} fill={catNecklaceProps.fill} stroke={catNecklaceProps.stroke} />
+            <SvgProxy selector={roundNecklaceSelector} display={catNecklaceProps.type === "round" ? "visible" : "none"} />
+            <SvgProxy selector={heartNecklaceSelector} display={catNecklaceProps.type === "heart" ? "visible" : "none"} />
+            <SvgProxy selector={ribbonNecklaceSelector} display={catNecklaceProps.type === "ribbon" ? "visible" : "none"} fill={catNecklaceProps.fill} stroke={catNecklaceProps.stroke} />
+            <SvgProxy selector={necklaceTextSelector} display={catNecklaceProps.type !== "ribbon" && catNecklaceProps.type !== "blank" ? "visible" : "none"} textContent={catProps.catName} />
         </SvgLoader>
     )
 }

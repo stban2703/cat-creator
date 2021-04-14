@@ -10,5 +10,10 @@ export const svgSelectors = {
     tricolorPatternBlack: "#tail-tricolorPattern-black00, #tail-tricolorPattern-black01, #tail-tricolorPattern-black02, #tail-tricolorPattern-black03, #back-left-tricolorPattern-black, #back-right-tricolorPattern-black, #body-front-tricolorPattern-black00, #body-front-tricolorPattern-black01, #ear-right-outside-tricolorPattern-black, #head-tricolorPattern-black",
     pupilContracted: ".pupil-contracted",
     pupilNormal: ".pupil-normal",
-    pupilExpanded: ".pupil-expanded"
+    pupilExpanded: ".pupil-expanded",
+    baseNecklace: "#necklace-base",
+    roundNecklace: "#necklace-round, #necklace-round-light",
+    heartNecklace: "#necklace-heart, #necklace-heart-light",
+    ribbonNecklace: "#necklace-ribbon00, #necklace-ribbon01, #necklace-ribbon02",
+    necklaceText: "#necklace-text"
 }
