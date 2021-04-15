@@ -60,9 +60,10 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
             <SvgProxy selector={heartNecklaceSelector} display={catNecklaceProps.type === "heart" ? "visible" : "none"} />
             <SvgProxy selector={ribbonNecklaceSelector} display={catNecklaceProps.type === "ribbon" ? "visible" : "none"} fill={catNecklaceProps.fill} stroke={catNecklaceProps.stroke} />
             <SvgProxy selector={necklaceTextSelector} display={catNecklaceProps.type !== "ribbon" && catNecklaceProps.type !== "blank" ? "visible" : "none"} />
-            <SvgProxy selector={topHatSelector + ", #tophat-light"} display={catHatProps.type === "tophat" ? "visible" : "none"} />
+            <SvgProxy selector={topHatSelector + ", #tophat-base-shadow, #tophat-top-shadow, #tophat-line"} display={catHatProps.type === "tophat" ? "visible" : "none"} />
             <SvgProxy selector={topHatSelector} fill={catHatProps.fill} stroke={catHatProps.stroke} />
-            <SvgProxy selector={partyHatSelector + ", #party"} display={catHatProps.type === "party" ? "visible" : "none"} />
+            <SvgProxy selector={"#tophat-line"} fill={catHatProps.stroke} stroke={catHatProps.stroke} />
+            <SvgProxy selector={partyHatSelector + ", #party, #party-shadow"} display={catHatProps.type === "party" ? "visible" : "none"} />
             <SvgProxy selector={partyHatSelector} fill={catHatProps.fill} />
         </SvgLoader>
     )

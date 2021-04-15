@@ -4,20 +4,20 @@
     transition: all .5s ease;
     width: 100%;
     max-width: none;
-    height: 90%;
+    height: 100%;
 }
 
 .CatView--eyes {
-    transform: scale(2.5) translate(-50px, 200px);
+    transform: scale(2.8) translate(-50px, 160px);
     transition: all .5s ease-out;
 }
 
 .CatView--necklace {
-    transform: scale(2.5) translate(-50px, 50px);
+    transform: scale(3) translate(-50px, 40px);
     transition: all .5s ease-out;
 }
 
 .CatView--hat {
-    transform: scale(2.5) translate(-50px, 350px);
+    transform: scale(2.8) translate(-50px, 220px);
     transition: all .5s ease-out;
 }
