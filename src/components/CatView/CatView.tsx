@@ -5,6 +5,7 @@ import './CatView.css';
 import { svgSelectors } from '../../utils/svgSelectors';
 import { handleCamera } from '../../utils/handleCamera';
 import { getImageSrcFromUrl } from '../../utils/getImageSrcFromUrl';
+import { getFilterFromValue } from '../../utils/getFilterFromValue';
 
 interface CatViewProps {
     catProps: CatPropsType;
@@ -17,6 +18,8 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
     const catNecklaceProps = catProps.settings[2];
     const catHatProps = catProps.settings[3];
     const catSceneProps = catProps.settings[4];
+
+    // SVG selectors
     const shadowSelector = svgSelectors.shadow;
     const furOnlyStrokeSelector = svgSelectors.furOnlyStroke;
     const furFillAndStrokeSelector = svgSelectors.furFillAndStroke;
@@ -36,10 +39,13 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
     const necklaceTextSelector = svgSelectors.necklaceText;
     const topHatSelector = svgSelectors.topHatSelector;
     const partyHatSelector = svgSelectors.partyHatSelector;
+
+    // Visualization
+    const filter = getFilterFromValue(catProps.filter);
     const camera = handleCamera(currentAttribute);
 
     return (
-        <div className={`CatView ${camera}`} style={{ backgroundImage: `url(${getImageSrcFromUrl(`${catSceneProps.type}`)}` }}>
+        <div className={`CatView ${camera}`} style={{ backgroundImage: `url(${getImageSrcFromUrl(`${catSceneProps.type}`)}`, filter: `${filter}` }}>
             <SvgLoader className="CatView__container" path={`${process.env.PUBLIC_URL}/images/render/cathats.svg`}>
                 <SvgProxy selector={eyesFillSelector} fill={catEyesProps.fill} />
                 <SvgProxy selector={furOnlyStrokeSelector} fill={catFurProps.stroke} />
