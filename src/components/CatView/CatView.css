@@ -5,11 +5,23 @@
     width: 100%;
     max-width: none;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.CatView__container {
+    width: 100%;
+    max-width: none;
+    height: 95%;
 }
 
 .CatView--eyes {
-    transform: scale(2.8) translate(-50px, 160px);
-    transition: all .5s ease-out;
+    transform: scale(3.5) translate(-50px, 140px);
+    transition: all .6s ease-out;
 }
 
 .CatView--necklace {
@@ -18,6 +30,6 @@
 }
 
 .CatView--hat {
-    transform: scale(2.8) translate(-50px, 220px);
+    transform: scale(3) translate(-50px, 210px);
     transition: all .5s ease-out;
 }

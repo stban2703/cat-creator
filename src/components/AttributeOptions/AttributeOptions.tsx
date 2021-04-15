@@ -24,7 +24,7 @@ export const AttributeOptions: React.FC<AttributeOptionsProps> = ({ currentAttri
             return (
                 <section className="AttributeOptions">
                     <h2 className="AttributeOptions__title">{title}</h2>
-
+                    <AttributeTypeSection itemList={itemList} subtitle={subtitle!} onEditAttributeType={onEditAttributeType} />
                 </section>
             )
 

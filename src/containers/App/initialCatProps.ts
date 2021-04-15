@@ -27,5 +27,11 @@ export const initialCatProps = {
             fill: "#000000",
             stroke: "#505050"
         },
+        {
+            id: "scene",
+            type: "house",
+            fill: "none",
+            stroke: "none"
+        }
     ]
 }

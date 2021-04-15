@@ -125,20 +125,20 @@ export const initialAttributeOptions = [
         itemList: [
             {
                 itemId: 0,
-                value: "blank",
-                url: "items/blank",
+                value: "backgrounds/room",
+                url: "items/roomitem",
                 checked: false
             },
             {
                 itemId: 1,
-                value: "tophat",
-                url: "items/tophat",
+                value: "backgrounds/bed",
+                url: "items/beditem",
                 checked: false
             },
             {
                 itemId: 2,
-                value: "party",
-                url: "items/party",
+                value: "backgrounds/park",
+                url: "items/parkitem",
                 checked: false
             }
         ],
