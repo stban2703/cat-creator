@@ -15,5 +15,7 @@ export const svgSelectors = {
     roundNecklace: "#necklace-round, #necklace-round-light",
     heartNecklace: "#necklace-heart, #necklace-heart-light",
     ribbonNecklace: "#necklace-ribbon00, #necklace-ribbon01, #necklace-ribbon02",
-    necklaceText: "#necklace-text"
+    necklaceText: "#necklace-text",
+    topHatSelector: "#tophat-00, #tophat-01, #tophat-02",
+    partyHatSelector: "#party-color01, #party-color02, #party-color03",
 }

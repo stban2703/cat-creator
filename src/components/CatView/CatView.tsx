@@ -14,6 +14,7 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
     const catFurProps = catProps.settings[0];
     const catEyesProps = catProps.settings[1];
     const catNecklaceProps = catProps.settings[2];
+    const catHatProps = catProps.settings[3];
     const shadowSelector = svgSelectors.shadow;
     const furOnlyStrokeSelector = svgSelectors.furOnlyStroke;
     const furFillAndStrokeSelector = svgSelectors.furFillAndStroke;
@@ -31,10 +32,12 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
     const heartNecklaceSelector = svgSelectors.heartNecklace;
     const ribbonNecklaceSelector = svgSelectors.ribbonNecklace;
     const necklaceTextSelector = svgSelectors.necklaceText;
+    const topHatSelector = svgSelectors.topHatSelector;
+    const partyHatSelector = svgSelectors.partyHatSelector;
     const camera = handleCamera(currentAttribute);
 
     return (
-        <SvgLoader className={`CatView ${camera}`} path={`${process.env.PUBLIC_URL}/images/render/catrender.svg`}>
+        <SvgLoader className={`CatView ${camera}`} path={`${process.env.PUBLIC_URL}/images/render/cathats.svg`}>
             <SvgProxy selector={eyesFillSelector} fill={catEyesProps.fill} />
             <SvgProxy selector={furOnlyStrokeSelector} fill={catFurProps.stroke} />
             <SvgProxy selector={furFillAndStrokeSelector} fill={catFurProps.fill} stroke={catFurProps.stroke} />
@@ -56,7 +59,11 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
             <SvgProxy selector={roundNecklaceSelector} display={catNecklaceProps.type === "round" ? "visible" : "none"} />
             <SvgProxy selector={heartNecklaceSelector} display={catNecklaceProps.type === "heart" ? "visible" : "none"} />
             <SvgProxy selector={ribbonNecklaceSelector} display={catNecklaceProps.type === "ribbon" ? "visible" : "none"} fill={catNecklaceProps.fill} stroke={catNecklaceProps.stroke} />
-            <SvgProxy selector={necklaceTextSelector} display={catNecklaceProps.type !== "ribbon" && catNecklaceProps.type !== "blank" ? "visible" : "none"} textContent={catProps.catName} />
+            <SvgProxy selector={necklaceTextSelector} display={catNecklaceProps.type !== "ribbon" && catNecklaceProps.type !== "blank" ? "visible" : "none"} />
+            <SvgProxy selector={topHatSelector + ", #tophat-light"} display={catHatProps.type === "tophat" ? "visible" : "none"} />
+            <SvgProxy selector={topHatSelector} fill={catHatProps.fill} stroke={catHatProps.stroke} />
+            <SvgProxy selector={partyHatSelector + ", #party"} display={catHatProps.type === "party" ? "visible" : "none"} />
+            <SvgProxy selector={partyHatSelector} fill={catHatProps.fill} />
         </SvgLoader>
     )
 }

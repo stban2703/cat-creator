@@ -24,8 +24,8 @@ export const initialCatProps = {
         {
             id: "hat",
             type: "blank",
-            fill: "#ffffff",
-            stroke: "none"
+            fill: "#000000",
+            stroke: "#505050"
         },
     ]
 }

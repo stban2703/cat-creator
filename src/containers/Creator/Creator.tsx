@@ -91,6 +91,7 @@ export const Creator: React.FC<CreatorProps> = ({ catList, onSaveCat }) => {
         catSettingsCopy[catSettingsIndex].stroke = colorStroke;
         catCopy.settings = catSettingsCopy;
         setCatProps(catCopy);
+        console.log(catSettingsCopy[catSettingsIndex].stroke)
     }
 
     return (
