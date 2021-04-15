@@ -30,6 +30,6 @@
 }
 
 .CatView--hat {
-    transform: scale(3) translate(-50px, 210px);
+    transform: scale(3) translate(-50px, 230px);
     transition: all .5s ease-out;
 }

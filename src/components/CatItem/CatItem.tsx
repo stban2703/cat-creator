@@ -3,7 +3,6 @@ import { CatPropsType } from '../../utils/CatPropsType';
 import "./CatItem.css";
 import { CatView } from '../CatView/CatView';
 import { Link } from 'react-router-dom';
-//import { CatPropsType } from '../../utils/CatPropsType';
 
 interface CatItemProps {
     catProps: CatPropsType;
