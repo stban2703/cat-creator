@@ -8,5 +8,7 @@ export const getSubtitleFromAttribute = (currentAttribute: string) => {
             return "Accesorio"
         case "hat":
             return "Tipo"
+        case "scene":
+            return "Fondo"
     }
 }

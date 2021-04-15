@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.FilterSection {
+    display: flex;
+    flex-direction: column;
+    margin: 8px 0;
+}
+
+.FilterSection__title {
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    margin: 10px 0;
+    color: #808183;
+}
+
+.FilterSection__select {
+    border: none;
+    border-bottom: 2px solid #808183;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.125rem;
+    outline: none;
+    color: #808183;
+}

@@ -2,6 +2,7 @@ export const initialCatProps = {
     id: "new",
     catName: "",
     creationDate: Date.now(),
+    filter: "string",
     settings: [
         {
             id: "fur",

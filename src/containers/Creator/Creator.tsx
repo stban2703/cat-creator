@@ -91,13 +91,18 @@ export const Creator: React.FC<CreatorProps> = ({ catList, onSaveCat }) => {
         catSettingsCopy[catSettingsIndex].stroke = colorStroke;
         catCopy.settings = catSettingsCopy;
         setCatProps(catCopy);
-        console.log(catSettingsCopy[catSettingsIndex].stroke)
+    }
+
+    const handleChangeFilter = (value: string) => {
+        const catPropsCopy = {...catProps};
+        catPropsCopy.filter = value;
+        setCatProps(catPropsCopy);
     }
 
     return (
         <article className="Creator">
             <EditView catProps={catProps!} currentAttribute={currentAttribute} />
-            <EditPanel catProps={catProps!} onEditCatName={handleCatName} attributeOptions={attributeOptions} currentAttribute={currentAttribute} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor} onChangeCurrentAttribute={handleCurrentAttribute} onSaveCat={onSaveCat} />
+            <EditPanel catProps={catProps!} onEditCatName={handleCatName} attributeOptions={attributeOptions} currentAttribute={currentAttribute} onEditAttributeType={handleAttributeType} onEditAttributeColor={handleAttributeColor} onChangeFilter={handleChangeFilter} onChangeCurrentAttribute={handleCurrentAttribute} onSaveCat={onSaveCat} />
         </article>
     )
 }
