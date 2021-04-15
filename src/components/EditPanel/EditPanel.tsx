@@ -34,7 +34,7 @@ export const EditPanel: React.FC<EditPanelProps> = ({ catProps, attributeOptions
         <article className="EditPanel">
             <AttributeSelection attributeOptions={attributeOptions} onChangeCurrentAttribute={onChangeCurrentAttribute} />
             <AttributeOptions currentAttribute={currentAttribute} onEditAttributeType={onEditAttributeType} onEditAttributeColor={onEditAttributeColor} itemList={itemList} />
-            <CatControl catProps={catProps} attributeOptions={attributeOptions} onEditCatName={onEditCatName} onSaveCat={onSaveCat} />
+            <CatControl catProps={catProps} onEditCatName={onEditCatName} onSaveCat={onSaveCat} />
         </article>
     )
 }
