@@ -8,7 +8,7 @@ export const initialAttributeOptions = [
                 itemId: 0,
                 value: "blank",
                 url: "items/blank",
-                checked: true,
+                checked: false,
             },
             {
                 itemId: 1,
@@ -45,7 +45,7 @@ export const initialAttributeOptions = [
                 itemId: 0,
                 value: "expanded",
                 url: "items/expanded",
-                checked: true
+                checked: false
             },
             {
                 itemId: 1,
@@ -71,7 +71,7 @@ export const initialAttributeOptions = [
                 itemId: 0,
                 value: "blank",
                 url: "items/blank",
-                checked: true
+                checked: false
             },
             {
                 itemId: 1,
@@ -102,7 +102,7 @@ export const initialAttributeOptions = [
                 itemId: 0,
                 value: "blank",
                 url: "items/blank",
-                checked: true
+                checked: false
             },
             {
                 itemId: 1,
@@ -127,7 +127,7 @@ export const initialAttributeOptions = [
                 itemId: 0,
                 value: "blank",
                 url: "items/blank",
-                checked: true
+                checked: false
             },
             {
                 itemId: 1,
