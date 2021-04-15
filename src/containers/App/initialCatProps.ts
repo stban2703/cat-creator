@@ -29,7 +29,7 @@ export const initialCatProps = {
         },
         {
             id: "scene",
-            type: "house",
+            type: "backgrounds/room",
             fill: "none",
             stroke: "none"
         }
