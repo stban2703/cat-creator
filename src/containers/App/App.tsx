@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route } from 'react-router';
 import { HashRouter } from 'react-router-dom';
 import { Creator } from '../Creator/Creator';
@@ -10,7 +10,14 @@ import './App.css';
 
 export const App = () => {
     //useState<CatPropsType[]>
-    const [catList, setCatList] = useState<CatPropsType[]>([]);
+    const storageList: CatPropsType[] = JSON.parse(window.localStorage.getItem('catList')!);
+    const [catList, setCatList] = useState<CatPropsType[]>(storageList || []);
+
+    useEffect(
+        () => {
+            window.localStorage.setItem('catList', JSON.stringify(catList));
+        },
+        [catList]);
 
     const handleSaveCat = (id: string, elem: CatPropsType) => {
         const catListCopy = [...catList];
@@ -18,14 +25,14 @@ export const App = () => {
             return e.id === id;
         })
 
-        if(catListCopy[catIndex]) {
+        if (catListCopy[catIndex]) {
             catListCopy[catIndex] = elem;
             setCatList(catListCopy)
         } else {
             const newCat = elem;
             newCat.id = Math.round(Math.random() * (10000000000 - 1)).toString();
             newCat.creationDate = Date.now();
-            if(newCat.catName === "") {
+            if (newCat.catName === "") {
                 newCat.catName = "Sin nombre";
             }
             catListCopy.push(newCat);
@@ -49,7 +56,7 @@ export const App = () => {
                 <Route path="/create/:id" render={() =>
                     <Creator catList={catList} onSaveCat={handleSaveCat} />}
                 />
-                <Route path="/cats/" render={() => <CreatedCats catList={catList} onDeleteCat={handleDeleteCat} /> } />
+                <Route path="/cats/" render={() => <CreatedCats catList={catList} onDeleteCat={handleDeleteCat} />} />
             </HashRouter>
         </main>
     );
