@@ -25,14 +25,11 @@ export const Creator: React.FC<CreatorProps> = ({ catList, onSaveCat }) => {
         });
         if (catPropsElem) {
             setCatProps(catPropsElem);
-            //console.log(catPropsElem)
         } else {
             setCatProps(JSON.parse(JSON.stringify(initialCatProps)));
-            //console.log(initialCatProps)
         }
         setCurrentAttribute("fur");
         setAttributeOptions(JSON.parse(JSON.stringify(initialAttributeOptions)));
-        //console.log(id)
     }, [id, catList]);
 
     const handleCatName = (newName: string) => {
