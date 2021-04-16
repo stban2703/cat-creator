@@ -21,7 +21,7 @@ export const CatControl: React.FC<CatControlProps> = ({ catProps, onEditCatName,
     }
     return (
         <section className="CatControl">
-            <input className="CatControl__input" type="text" name="catName" value={catProps.catName} placeholder="Escribe el nombre de tu gato" onChange={handleTextChange} autoComplete="off" />
+            <input className="CatControl__input" type="text" name="catName" value={catProps.catName} placeholder="Escribe el nombre de tu gato" onChange={handleTextChange} autoComplete="off" maxLength={10} />
             <div className="CatControl__options">
                 <div className="CatControl__section">
                     <button className="CatControl__btn CatControl__btn--green" onClick={intermediateSaveCat} >

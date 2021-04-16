@@ -25,6 +25,9 @@ export const App = () => {
             const newCat = elem;
             newCat.id = Math.round(Math.random() * (10000000000 - 1)).toString();
             newCat.creationDate = Date.now();
+            if(newCat.catName === "") {
+                newCat.catName = "Sin nombre";
+            }
             catListCopy.push(newCat);
             setCatList(catListCopy);
         }
