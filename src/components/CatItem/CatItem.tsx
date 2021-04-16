@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { CatPropsType } from '../../utils/CatPropsType';
 import "./CatItem.css";
 import { CatView } from '../CatView/CatView';
 import { Link } from 'react-router-dom';
+import domtoimage from 'dom-to-image';
+import { saveAs } from 'file-saver';
 
 interface CatItemProps {
     catProps: CatPropsType;
@@ -10,9 +12,22 @@ interface CatItemProps {
 }
 
 export const CatItem: React.FC<CatItemProps> = ({ catProps, onDeleteCat }) => {
+
+    const catPreviewRef = useRef(null);
+    const [isDownloading, setIsDownloading] = useState(false);
+
+    const handleDownloadCat = () => {
+        setIsDownloading(true)
+        domtoimage.toBlob(catPreviewRef.current!)
+            .then(function (blob) {
+                saveAs(blob, `${catProps.catName}-${catProps.id}.png`);
+                setIsDownloading(false);
+            });
+    }
+
     return (
         <div className="CatItem">
-            <div className="CatItem__preview">
+            <div className={`CatItem__preview${isDownloading ? " CatItem__preview--big" : ""}`} ref={catPreviewRef} >
                 <CatView catProps={catProps} currentAttribute={"fur"} />
             </div>
             <div className="CatItem__info">
@@ -28,7 +43,10 @@ export const CatItem: React.FC<CatItemProps> = ({ catProps, onDeleteCat }) => {
                 <button className="CatItem__btn CatItem__btn--delete" onClick={onDeleteCat} >
                     Eliminar
                 </button>
+                <button className="CatItem__btn CatItem__btn--download" onClick={() => { handleDownloadCat() }} >
+                    Descargar imagen
+                </button>
             </div>
-        </div>
+        </div >
     )
 }
