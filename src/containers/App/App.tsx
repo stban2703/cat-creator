@@ -9,7 +9,6 @@ import "./reset.css";
 import './App.css';
 
 export const App = () => {
-    //useState<CatPropsType[]>
     const storageList: CatPropsType[] = JSON.parse(window.localStorage.getItem('catList')!);
     const [catList, setCatList] = useState<CatPropsType[]>(storageList || []);
 
