@@ -2,7 +2,7 @@ import React from 'react';
 import { CatPropsType } from '../../utils/CatPropsType';
 import { SvgLoader, SvgProxy } from "react-svgmt";
 import './CatView.css';
-import { svgSelectors } from '../../utils/svgSelectors';
+import { baseNecklaceSelector, colorAndWhitePatternSelector, eyesFillSelector, furFillAndStrokeSelector, furOnlyStrokeSelector, heartNecklaceSelector, linesPatternSelector, necklaceTextSelector, partyHatSelector, pupilContractedSelector, pupilExpandedSelector, pupilNormalSelector, ribbonNecklaceSelector, roundNecklaceSelector, shadowSelector, siamesePatternSelector, topHatSelector, tricolorBlackSelector, tricolorYellowSelector } from '../../utils/svgSelectors';
 import { handleCamera } from '../../utils/handleCamera';
 import { getImageSrcFromUrl } from '../../utils/getImageSrcFromUrl';
 import { getFilterFromValue } from '../../utils/getFilterFromValue';
@@ -18,27 +18,6 @@ export const CatView: React.FC<CatViewProps> = ({ catProps, currentAttribute }) 
     const catNecklaceProps = catProps.settings[2];
     const catHatProps = catProps.settings[3];
     const catSceneProps = catProps.settings[4];
-
-    // SVG selectors
-    const shadowSelector = svgSelectors.shadow;
-    const furOnlyStrokeSelector = svgSelectors.furOnlyStroke;
-    const furFillAndStrokeSelector = svgSelectors.furFillAndStroke;
-    const eyesFillSelector = svgSelectors.eyesFill;
-    const linesPatternSelector = svgSelectors.linesPattern;
-    const colorAndWhitePatternSelector = svgSelectors.colorAndWhitePattern;
-    const siamesePatternSelector = svgSelectors.siamesePattern;
-    const tricolorYellowSelector = svgSelectors.tricolorPatternYellow;
-    const tricolorBlackSelector = svgSelectors.tricolorPatternBlack;
-    const pupilContractedSelector = svgSelectors.pupilContracted;
-    const pupilNormalSelector = svgSelectors.pupilNormal;
-    const pupilExpandedSelector = svgSelectors.pupilExpanded;
-    const baseNecklaceSelector = svgSelectors.baseNecklace;
-    const roundNecklaceSelector = svgSelectors.roundNecklace;
-    const heartNecklaceSelector = svgSelectors.heartNecklace;
-    const ribbonNecklaceSelector = svgSelectors.ribbonNecklace;
-    const necklaceTextSelector = svgSelectors.necklaceText;
-    const topHatSelector = svgSelectors.topHatSelector;
-    const partyHatSelector = svgSelectors.partyHatSelector;
 
     // Visualization
     const filter = getFilterFromValue(catProps.filter);
